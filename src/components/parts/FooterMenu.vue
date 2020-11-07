@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>{{ footer }}</p>
+    <p v-html="footer"></p>
   </footer>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   name: 'Footer',
   data () {
     return {
-      footer: 'ここはフッターになります。'
+      footer: ' &copy; Kosuke Homma'
     }
   }
 }
@@ -18,15 +18,12 @@ export default {
 <style scoped>
 
 footer {
-  display: block;
-  width: 100%;
-  background-color: skyblue;
+  background-color: #ffffffaa;
   position: fixed;
+  right: 0;
   bottom: 0;
 }
-
-footer p {
-  color: #fff;
+footer > p {
+  margin: 0.5rem;
 }
-
 </style>

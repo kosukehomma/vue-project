@@ -1,7 +1,9 @@
 <template>
   <div class="profile">
-    <h1>{{ greeding }}</h1>
+    <section class="profile-area">
+    <p>{{ greeding }}</p>
     <p>{{ text }}</p>
+    </section>
   </div>
 </template>
 
@@ -17,6 +19,18 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  max-width: 100vh;
+  width: auto;
+  min-height: 90vh;
+}
+.profile-area {
+  text-align: left;
+  padding: 0 1.5rem;
+}
 </style>
