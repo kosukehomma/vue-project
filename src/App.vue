@@ -25,11 +25,12 @@ export default {
 <style>
 body {
   color: #333;
-  font-family: 'Century Gothic', 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Sawarabi Gothic", Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
+  background-image: url(./assets/bg.jpg);
 }
 h1 {
   margin: 0;
@@ -42,7 +43,7 @@ h1 {
   height: 100%;
 }
 #app > div {
-  padding-left: 230px;
+  padding-left: 250px;
 }
 .v-enter {
   transform: translate(0, 50px);
@@ -68,6 +69,7 @@ h1 {
 @media (max-width: 768px) {
   #app > div {
     padding-left: 0;
+    margin-top: 2.5rem;
   }
 }
 </style>

@@ -9,7 +9,7 @@ export default {
   name: 'Footer',
   data () {
     return {
-      footer: ' &copy; Kosuke Homma'
+      footer: ' &copy; 2020 Kosuke Homma'
     }
   }
 }
@@ -18,12 +18,21 @@ export default {
 <style scoped>
 
 footer {
-  background-color: #ffffffaa;
+  width: 240px;
   position: fixed;
-  right: 0;
+  color: #fff;
+  left: 0%;
   bottom: 0;
+  z-index: 15;
 }
 footer > p {
   margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  footer {
+    width: 100%;
+    background-color: #004015;
+  }
 }
 </style>

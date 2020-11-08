@@ -4,9 +4,8 @@
       <h1 class="name">
         <span v-for="(item, key) in title" :key="key">{{ item }}</span>
       </h1>
-      <p class="catch">{{ work }}</p>
+      <h2 class="work catch">{{ work }}</h2>
       <p class="catch">{{ text }}</p>
-      
       <div class="icon-area">
         <FacebookIcon />
         <InstagramIcon />
@@ -22,24 +21,27 @@ import FacebookIcon from '@/components/parts/sns/FacebookIcon'
 import InstagramIcon from '@/components/parts/sns/InstagramIcon'
 import PinterestIcon from '@/components/parts/sns/PinterestIcon'
 import GithubIcon from '@/components/parts/skills/GithubIcon'
+import TwitterIcon from '@/components/parts/sns/TwitterIcon'
+import QiitaIcon from '@/components/parts/sns/QiitaIcon'
 
 export default {
   name: 'Home',
   data () {
     return {
-      title: 'YUJI AKUTSU',
-      work: 'マークアップ・フロントエンドエンジニアです。',
-      text: `1981年11月、東京都生まれ。      
-元々は人材系の会社で人員の手配や管理の仕事などをしていましたが、
-法改正や、当時の会社の事情など色々と重なり、自社サイト更新からこの業界にたどり着きました。
-それからは携わったwebサイトのジャンルは多岐に渡り、数だけは多いのではないかと思います。`
+      title: 'KOSUKE HOMMA',
+      work: 'Markup/Front-end engineer',
+      text: `ご訪問ありがとうございます。
+東京・神奈川で活動しているマークアップ・フロントエンドエンジニアです。
+ご質問・ご依頼などありましたら「CONTACT」ページからか、SNSのDMなどでお願いします。`
     }
   },
   components: {
     FacebookIcon,
     InstagramIcon,
     PinterestIcon,
-    GithubIcon
+    GithubIcon,
+    TwitterIcon,
+    QiitaIcon
   }
 }
 </script>
@@ -50,7 +52,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: normal;
-  max-width: 100vh;
+  max-width: 100vw;
   width: auto;
   min-height: 90vh;
 }
@@ -63,12 +65,18 @@ export default {
   margin-top: 2rem;
 }
 .name {
-  font-size: 6.5rem;
+  font-size: 5.5rem;
   font-weight: normal;
   color: #2b5435;
 }
-.name span:nth-child(n+6) {
+.name span:nth-child(n+7) {
   color: #80b827;
+}
+.work {
+  color: #2b5435;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 .catch {
   white-space:pre-wrap;

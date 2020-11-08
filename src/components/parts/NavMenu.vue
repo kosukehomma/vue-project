@@ -1,7 +1,9 @@
 <template>
-  <nav class="sideMenu">
-    <h1 class="myname">KOSUKE HOMMA</h1>
-    <span><img src="@/assets/prof_test.jpg"></span>
+  <nav class="sideMenu" :class="{'sticky': position > 0}">
+    <h1 class="myname">
+      <router-link to="/">KOSUKE HOMMA</router-link>
+    </h1>
+    <span><img src="@/assets/prof.jpg"></span>
 
     <div class="hamburger_btn" v-on:click="ActiveBtn=!ActiveBtn">
       <span class="line line_01" v-bind:class="{ 'btn_line01':ActiveBtn }"></span>
@@ -40,7 +42,7 @@ export default {
   data () {
     return {
       items: [
-        { title: 'TOP', path: '/', class: 'active' },
+        { title: 'HOME', path: '/', class: 'active' },
         { title: 'PROFILE', path: '/profile' },
         { title: 'SKILLS', path: '/skills' },
         { title: 'OUTPUTS', path: '/outputs' },
@@ -48,7 +50,8 @@ export default {
         { title: 'vue-lesson', path: '/vue-lesson' }
       ],
       activeItem: null,
-      ActiveBtn: false
+      ActiveBtn: false,
+      position: 0
     }
   },
   methods: {
@@ -60,6 +63,12 @@ export default {
         this.ActiveBtn = false
       }
     }
+  },
+  ready: function () {
+    let self = this
+    document.onscroll = function (e) {
+      self.position = document.documentElement.scrollTop || document.body.scrollTop
+    }
   }
 }
 </script>
@@ -67,7 +76,7 @@ export default {
 <style scoped>
 .sideMenu {
   background: #004015;
-  width: 220px;
+  width: 240px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -149,12 +158,26 @@ a {
     padding: 0.5rem 0 0.5rem;
     z-index: 10;
     text-align: left;
-    position: relative;
+  }
+  .sticky {
+    background: rgba(200,200,200, 0.5);
+    text-align: left;
+    text-shadow: 0px 1px 2px #777;
+    color: white;
+    font-size: 2rem;
+    padding-left: 10px;
+    height: 2rem;
+    line-height: 4rem;
   }
   .sideMenu h1 {
     display: inline-block;
     color: #fff;
-    margin: 0.25rem 0.5rem 0.5rem;
+    margin: 0.25rem 0.5rem 0.25rem;
+    font-weight: normal;
+  }
+  .sideMenu h1 a {
+    position: sticky;
+    line-height: 1;
   }
   .sideMenu span {
     margin: 0 0 0 .25rem;
@@ -230,10 +253,11 @@ a {
   }
   ol {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 0;
     background: #004015dd;
     width: 220px;
+    padding-bottom: 0.5rem;
   }
   li {
     border-bottom: 1px solid #fff;

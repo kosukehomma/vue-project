@@ -8,6 +8,6 @@
 .icon-area svg {
   width: 3.75rem;
   height: 3.75rem;
-  margin: 0.25rem 0.5rem;
+  margin: 0.25rem 0.75rem;
 }
 </style>
