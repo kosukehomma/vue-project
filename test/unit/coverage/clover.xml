@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604795564064" clover="3.2.0">
-  <project timestamp="1604795564064" name="All files">
-    <metrics statements="19" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="0" elements="31" coveredelements="0" complexity="0" loc="19" ncloc="19" packages="3" files="10" classes="10">
+<coverage generated="1604920680149" clover="3.2.0">
+  <project timestamp="1604920680149" name="All files">
+    <metrics statements="48" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="12" coveredmethods="0" elements="64" coveredelements="0" complexity="0" loc="48" ncloc="48" packages="3" files="10" classes="10">
       <package name="src">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="App.vue" path="E:\workspace\vue-project\src\App.vue">
@@ -11,7 +11,7 @@
         </file>
       </package>
       <package name="src.components">
-        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <metrics statements="37" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <file name="Contact.vue" path="E:\workspace\vue-project\src\components\Contact.vue">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="13" count="0" type="stmt"/>
@@ -21,12 +21,14 @@
           <line num="90" count="0" type="stmt"/>
         </file>
         <file name="Home.vue" path="E:\workspace\vue-project\src\components\Home.vue">
-          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="20" count="0" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
           <line num="23" count="0" type="stmt"/>
-          <line num="28" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
         </file>
         <file name="Output.vue" path="E:\workspace\vue-project\src\components\Output.vue">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -34,11 +36,35 @@
         </file>
         <file name="Profile.vue" path="E:\workspace\vue-project\src\components\Profile.vue">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-          <line num="16" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
         </file>
         <file name="Skill.vue" path="E:\workspace\vue-project\src\components\Skill.vue">
-          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-          <line num="13" count="0" type="stmt"/>
+          <metrics statements="25" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="55" count="0" type="stmt"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
         </file>
         <file name="VueLesson.vue" path="E:\workspace\vue-project\src\components\VueLesson.vue">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -46,18 +72,21 @@
         </file>
       </package>
       <package name="src.components.parts">
-        <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <file name="FooterMenu.vue" path="E:\workspace\vue-project\src\components\parts\FooterMenu.vue">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="11" count="0" type="stmt"/>
         </file>
         <file name="NavMenu.vue" path="E:\workspace\vue-project\src\components\parts\NavMenu.vue">
-          <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-          <line num="41" count="0" type="stmt"/>
-          <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="57" count="0" type="stmt"/>
-          <line num="59" count="0" type="stmt"/>
+          <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="60" count="0" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
         </file>
       </package>
     </metrics>
