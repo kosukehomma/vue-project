@@ -9,7 +9,7 @@
 .skill-icons svg {
   width: 3rem;
   height: 3rem;
-  margin: 0.75rem 0.5rem 0;
+  margin: 0.75rem 0.75rem 0;
   overflow: initial;
   fill: rgb(88, 85, 85) !important;
 }
@@ -17,8 +17,10 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   margin-bottom: 0.75rem;
 }
 .icon-layout span {
    font-size: 10px;
+   font-weight: bold;
 }
 </style>

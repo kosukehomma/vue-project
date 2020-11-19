@@ -136,19 +136,13 @@ export default {
 }
 h1 {
   color: #2c8829;
-  font-size: 2rem;
+  font-size: 3.25rem;
   font-weight: normal;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 25px 30px 0 #a7df96,
+  0px 0px 3px #034210;
 }
-h1::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #0b4941;
-  background-image: linear-gradient(-65deg,#16235f,#01913d);
-  box-shadow: 1px 2px 1px rgb(112, 151, 108);
-}
+
 h2 {
   color: #081607;
   font-size: 1rem;
