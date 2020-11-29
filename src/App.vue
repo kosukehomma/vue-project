@@ -25,7 +25,7 @@ export default {
 <style>
 body {
   color: #333;
-  font-family: "Sawarabi Gothic", Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
+  font-family: 'Fjalla One', 'Kosugi', 'Montserrat', Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;

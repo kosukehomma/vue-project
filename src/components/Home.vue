@@ -6,6 +6,7 @@
       </h1>
       <h2 class="work catch">{{ work }}</h2>
       <p class="catch">{{ text }}</p>
+      <p class="catch-en">{{ text_en }}</p>
       <div class="icon-area">
         <FacebookIcon />
         <InstagramIcon />
@@ -32,7 +33,10 @@ export default {
       work: 'Markup/Front-end engineer',
       text: `ご訪問ありがとうございます。
 東京・神奈川で活動しているマークアップ・フロントエンドエンジニアです。
-ご質問・ご依頼などありましたら「CONTACT」ページからか、SNSのDMなどでお願いします。`
+SNSなどで気軽にメッセージください。`,
+      text_en: `Thank you for visiting.
+I am a markup front-end engineer working in Tokyo and Kanagawa.
+Feel free to message me on SNS etc.`
     }
   },
   components: {
@@ -83,4 +87,8 @@ export default {
   padding-left: 1rem;
 }
 
+.catch-en {
+  white-space:pre-wrap;
+  padding-left: 1rem;
+}
 </style>

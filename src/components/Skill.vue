@@ -120,9 +120,8 @@ h1 {
   color: #2c8829;
   font-size: 3.25rem;
   font-weight: normal;
-  margin-bottom: 2rem;
-  text-shadow: 25px 30px 0 #a7df96,
-  0px 0px 3px #034210;
+  margin-bottom: 4.5rem;
+  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
 }
 h2 {
   color:#549752;

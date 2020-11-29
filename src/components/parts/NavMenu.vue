@@ -46,8 +46,7 @@ export default {
         { title: 'PROFILE', path: '/profile' },
         { title: 'SKILLS', path: '/skills' },
         { title: 'OUTPUTS', path: '/outputs' },
-        { title: 'CONTACT', path: '/contact' },
-        { title: 'vue-lesson', path: '/vue-lesson' }
+        { title: 'CONTACT', path: '/contact' }
       ],
       activeItem: null,
       ActiveBtn: false,
@@ -125,9 +124,6 @@ li {
   transition: .4s ease;
 }
 
-li:last-child {
-  background-color:brown;
-}
 li:hover {
   background: rgba(255, 255, 255, 0.2);
   opacity: 0.8;
