@@ -14,13 +14,13 @@
   fill: rgb(88, 85, 85) !important;
 }
 .icon-layout {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.75rem;
 }
 .icon-layout span {
-   font-size: 10px;
-   font-weight: bold;
+  font-size: 10px;
+  font-weight: bold;
 }
 </style>

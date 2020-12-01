@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavMenu />
+    <!-- <NavMenu /> -->
       <transition mode="out-in">
         <router-view/>
       </transition>
