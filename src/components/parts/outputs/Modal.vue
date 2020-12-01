@@ -5,7 +5,9 @@
         <img :src="val.thumb">
         <p>説明：{{ val.title }}</p>
         <p>作業範囲：{{ val.detail }}</p>
-        <p>使用技術：{{ val.lang }}</p>
+        <div>
+          使用技術：<component :is="val.lang"></component></div>
+        <p>URL：{{ val.url }}</p>
         <button class="close-btn" @click="$emit('close')">CLOSE</button>
       </section>
       <div class="overwrap" @click="$emit('close')"></div>
@@ -91,5 +93,7 @@ export default {
 .modal-leave-to {
   opacity: 0;
 }
-
+.icon-layout {
+  max-width: 50px;
+}
 </style>

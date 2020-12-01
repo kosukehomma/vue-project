@@ -4,8 +4,11 @@
     <section class="contact-form">
       <FormulateForm
       class="contact-form-wrapper"
+      name="contact"
+      method="POST"
       v-model="formValues"
       @submit="submitHandler"
+      netlify
       >
         <!-- <p>
           <label>YOUR NAME</label><br>

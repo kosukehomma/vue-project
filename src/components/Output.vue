@@ -16,10 +16,28 @@
 
 <script>
 import Modal from '@/components/parts/outputs/Modal.vue'
+
+import HtmlIcon from '@/components/parts/skills/HtmlIcon.vue'
+import CssIcon from '@/components/parts/skills/CssIcon.vue'
+import JavascriptIcon from '@/components/parts/skills/JavascriptIcon.vue'
+import JqueryIcon from '@/components/parts/skills/JqueryIcon.vue'
+import IllustratorIcon from '@/components/parts/skills/IllustratorIcon.vue'
+import PhotoshopIcon from '@/components/parts/skills/PhotoshopIcon.vue'
+import SassIcon from '@/components/parts/skills/SassIcon.vue'
+import VueIcon from '@/components/parts/skills/VueIcon.vue'
+
 export default {
   name: 'Output',
   components: {
-    Modal
+    Modal,
+    HtmlIcon,
+    CssIcon,
+    JavascriptIcon,
+    JqueryIcon,
+    IllustratorIcon,
+    PhotoshopIcon,
+    SassIcon,
+    VueIcon
   },
   data () {
     return {
@@ -32,7 +50,7 @@ export default {
           thumb: require('@/assets/output-thumb.jpg'),
           caption: 'このサイトです。vue-cliで制作しました。',
           detail: 'このサイトです。もう少しデザインを洗練させたいです。アニメーションも付けたい',
-          lang: 'HTML, CSS',
+          lang: HtmlIcon,
           url: 'https://xxxxx.xxxx/'
         },
         {
@@ -40,7 +58,7 @@ export default {
           thumb: require('@/assets/output-thumb_dummy.jpg'),
           caption: 'ブログサイトになります。思った事を書いていこうかと、',
           detail: 'ブログサイトになります。技術的な事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作る予定です。',
-          lang: 'HTML, CSS',
+          lang: HtmlIcon,
           url: 'https://xxxxx.xxxx/'
         },
         {
@@ -48,7 +66,7 @@ export default {
           thumb: require('@/assets/output-thumb_dummy.jpg'),
           caption: 'ちょっとしたwebアプリ',
           detail: 'LaravelとVueでちょっとしたwebアプリ作ってみました。',
-          lang: 'HTML, CSS',
+          lang: CssIcon,
           url: 'https://xxxxx.xxxx/'
         },
         {
@@ -56,7 +74,7 @@ export default {
           thumb: require('@/assets/output-thumb_dummy.jpg'),
           caption: '架空の会社のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の会社のHPです。',
-          lang: 'HTML, CSS',
+          lang: VueIcon,
           url: 'https://xxxxx.xxxx/'
         },
         {
@@ -64,7 +82,7 @@ export default {
           thumb: require('@/assets/output-thumb_dummy.jpg'),
           caption: '架空の蕎麦屋のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
-          lang: 'HTML, CSS',
+          lang: JavascriptIcon,
           url: 'https://xxxxx.xxxx/'
         },
         {
@@ -72,7 +90,7 @@ export default {
           thumb: require('@/assets/output-thumb_dummy.jpg'),
           caption: '架空の唐揚げ専門店のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
-          lang: 'HTML, CSS',
+          lang: SassIcon,
           url: 'https://xxxxx.xxxx/'
         }
       ]
