@@ -34,6 +34,11 @@
         <li>スマホ、タブレットでも快適に閲覧できるレスポンシブデザインを制作できます。</li>
         <li>人材サービス会社のwebサイトからはじまり、様々な企業、店舗のサイト作りを手掛けてきた経験から、ご希望のデザイン案に沿ってより生産的なコーディングを行います。</li>
       </ul>
+      <h2>Favorite</h2>
+      <ul>
+        <li>YouTubeで動画巡り</li>
+        <li>Funk Music</li>
+      </ul>
     </section>
   </div>
 </template>
@@ -63,6 +68,16 @@ import NuxtIcon from '@/components/parts/skills/NuxtIcon'
 import SlackIcon from '@/components/parts/skills/SlackIcon'
 import PhpIcon from '@/components/parts/skills/PhpIcon'
 import YarnIcon from '@/components/parts/skills/YarnIcon'
+import DjangoIcon from '@/components/parts/skills/DjangoIcon'
+import KotlinIcon from '@/components/parts/skills/KotlinIcon'
+import NetlifyIcon from '@/components/parts/skills/NetlifyIcon'
+import NextIcon from '@/components/parts/skills/NextIcon'
+import PythonIcon from '@/components/parts/skills/PythonIcon'
+import ReactIcon from '@/components/parts/skills/ReactIcon'
+import RubyIcon from '@/components/parts/skills/RubyIcon'
+import RubyonrailsIcon from '@/components/parts/skills/RubyonrailsIcon'
+import TypescriptIcon from '@/components/parts/skills/TypescriptIcon'
+import VuetifyIcon from '@/components/parts/skills/VuetifyIcon'
 
 export default {
   name: 'Skills',
@@ -97,7 +112,17 @@ export default {
     NuxtIcon,
     SlackIcon,
     PhpIcon,
-    YarnIcon
+    YarnIcon,
+    DjangoIcon,
+    KotlinIcon,
+    NetlifyIcon,
+    NextIcon,
+    PythonIcon,
+    ReactIcon,
+    RubyIcon,
+    RubyonrailsIcon,
+    TypescriptIcon,
+    VuetifyIcon
   }
 }
 </script>

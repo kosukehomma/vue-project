@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <NavMenu /> -->
+    <NavMenu />
       <transition mode="out-in">
         <router-view/>
       </transition>
@@ -30,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
-  background-image: url(./assets/bg.jpg);
+  background-image: url(./assets/img/bg.jpg);
 }
 h1 {
   margin: 0;

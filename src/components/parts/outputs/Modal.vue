@@ -93,7 +93,4 @@ export default {
 .modal-leave-to {
   opacity: 0;
 }
-.icon-layout {
-  max-width: 50px;
-}
 </style>

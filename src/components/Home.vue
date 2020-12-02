@@ -8,10 +8,18 @@
       <p class="catch">{{ text }}</p>
       <p class="catch-en">{{ text_en }}</p>
       <div class="icon-area">
-        <FacebookIcon />
-        <InstagramIcon />
-        <PinterestIcon />
-        <GithubIcon />
+        <a href="https://www.facebook.com/honma.jams4511" target="_blank">
+          <FacebookIcon />
+        </a>
+        <a href="https://www.instagram.com/hommashigh/" target="_blank">
+          <InstagramIcon />
+        </a>
+        <a href="https://www.pinterest.jp/hommer42/_saved/" target="_blank">
+          <PinterestIcon />
+        </a>
+        <a href="https://github.com/honmakousuke" target="_blank">
+          <GithubIcon />
+        </a>
       </div>
     </section>
   </div>

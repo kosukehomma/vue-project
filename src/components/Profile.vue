@@ -5,7 +5,7 @@
       <div class="greeding">
         <p class="catch">{{ greeding }}</p>
         <figure class="profile-img">
-          <img src="@/assets/profile_image.jpg">
+          <img v-bind:src="imgPath">
         </figure>
       </div>
     </section>
@@ -69,7 +69,8 @@ export default {
           title: `人材派遣会社のサイトのリニューアル＆求人用サイト立ち上げ`,
           detail: `2004年2月より4年間、営業管理部として従事していたが、2008年4月に部署移動により、サイトのリニューアル、新設の求人専用サイトの立ち上げに携わる。`
         }
-      ]
+      ],
+      imgPath: require('@/assets/img/profile_image.jpg')
     }
   }
 }

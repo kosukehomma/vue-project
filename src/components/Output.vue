@@ -2,10 +2,10 @@
   <div class="output">
     <h1>{{ title }}</h1>
     <section class="output-items">
-      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)">
-        <figure class="thumbnail">
-          <img :src="outputItem.thumb">
-        </figure>
+      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
+      v-bind:style="{
+        'background-image': 'url(' + outputItem.thumb + ')'
+      }">
         <h3> {{ outputItem.title }} </h3>
         <p class="content-detail"> {{ outputItem.caption }} </p>
       </div>
@@ -15,29 +15,16 @@
 </template>
 
 <script>
-import Modal from '@/components/parts/outputs/Modal.vue'
-
-import HtmlIcon from '@/components/parts/skills/HtmlIcon.vue'
-import CssIcon from '@/components/parts/skills/CssIcon.vue'
-import JavascriptIcon from '@/components/parts/skills/JavascriptIcon.vue'
-import JqueryIcon from '@/components/parts/skills/JqueryIcon.vue'
-import IllustratorIcon from '@/components/parts/skills/IllustratorIcon.vue'
-import PhotoshopIcon from '@/components/parts/skills/PhotoshopIcon.vue'
-import SassIcon from '@/components/parts/skills/SassIcon.vue'
-import VueIcon from '@/components/parts/skills/VueIcon.vue'
+import Modal from '@/components/parts/outputs/Modal'
+import SkillSet01 from '@/components/parts/outputs/SkillSet01'
+import SkillSet02 from '@/components/parts/outputs/SkillSet02'
 
 export default {
   name: 'Output',
   components: {
     Modal,
-    HtmlIcon,
-    CssIcon,
-    JavascriptIcon,
-    JqueryIcon,
-    IllustratorIcon,
-    PhotoshopIcon,
-    SassIcon,
-    VueIcon
+    SkillSet01,
+    SkillSet02
   },
   data () {
     return {
@@ -47,50 +34,50 @@ export default {
       outputItems: [
         {
           title: '作品No.1',
-          thumb: require('@/assets/output-thumb.jpg'),
+          thumb: require('@/assets/img/output-thumb.jpg'),
           caption: 'このサイトです。vue-cliで制作しました。',
           detail: 'このサイトです。もう少しデザインを洗練させたいです。アニメーションも付けたい',
-          lang: HtmlIcon,
+          lang: SkillSet01,
           url: 'https://xxxxx.xxxx/'
         },
         {
           title: '作品No.2',
-          thumb: require('@/assets/output-thumb_dummy.jpg'),
+          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: 'ブログサイトになります。思った事を書いていこうかと、',
           detail: 'ブログサイトになります。技術的な事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作る予定です。',
-          lang: HtmlIcon,
+          lang: SkillSet02,
           url: 'https://xxxxx.xxxx/'
         },
         {
           title: '作品No.3',
-          thumb: require('@/assets/output-thumb_dummy.jpg'),
+          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: 'ちょっとしたwebアプリ',
           detail: 'LaravelとVueでちょっとしたwebアプリ作ってみました。',
-          lang: CssIcon,
+          lang: 'CssIcon',
           url: 'https://xxxxx.xxxx/'
         },
         {
           title: '作品No.4',
-          thumb: require('@/assets/output-thumb_dummy.jpg'),
+          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: '架空の会社のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の会社のHPです。',
-          lang: VueIcon,
+          lang: 'VueIcon',
           url: 'https://xxxxx.xxxx/'
         },
         {
           title: '作品No.5',
-          thumb: require('@/assets/output-thumb_dummy.jpg'),
+          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: '架空の蕎麦屋のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
-          lang: JavascriptIcon,
+          lang: 'JavascriptIcon',
           url: 'https://xxxxx.xxxx/'
         },
         {
           title: '作品No.6',
-          thumb: require('@/assets/output-thumb_dummy.jpg'),
+          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: '架空の唐揚げ専門店のHPです。',
           detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
-          lang: SassIcon,
+          lang: 'SassIcon',
           url: 'https://xxxxx.xxxx/'
         }
       ]
@@ -141,9 +128,15 @@ h1 {
   display: inline-block;
   margin: 10px;
   width: 30%;
+  min-width: 250px;
   box-shadow: 1px 2px 3px #6d6d6d;
-  min-height: 200px;
+  min-height: 100px;
   cursor: pointer;
+  border-radius: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-top: 150px;
 }
 
 .thumbnail {

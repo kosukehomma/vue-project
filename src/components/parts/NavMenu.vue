@@ -3,7 +3,7 @@
     <h1 class="myname">
       <router-link to="/">KOSUKE HOMMA</router-link>
     </h1>
-    <span><img src="@/assets/prof.jpg"></span>
+    <span><img v-bind:src="imgPath"></span>
 
     <div class="hamburger_btn" v-on:click="ActiveBtn=!ActiveBtn">
       <span class="line line_01" v-bind:class="{ 'btn_line01':ActiveBtn }"></span>
@@ -50,7 +50,8 @@ export default {
       ],
       activeItem: null,
       ActiveBtn: false,
-      position: 0
+      position: 0,
+      imgPath: require('@/assets/img/prof_develop.jpg')
     }
   },
   methods: {
