@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 body {
   color: #333;
   font-family: 'Fjalla One', 'Kosugi', 'Montserrat', Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
@@ -41,12 +41,15 @@ h1 {
   text-align: center;
   padding-bottom: 60px;
   height: 100%;
+  & > div {
+    padding-left: 250px;
+  }
 }
-#app > div {
-  padding-left: 250px;
-}
+// #app > div {
+//   padding-left: 250px;
+// }
 .v-enter {
-  transform: translate(0, 50px);
+  transform: translate(-50px, 0);
   opacity: 0;
 }
 .v-enter-to {
@@ -60,7 +63,7 @@ h1 {
   opacity: 1;
 }
 .v-leave-to {
-  transform: translate(0, -50px);
+  transform: translate(50px, 0);
   opacity: 0;
 }
 .v-leave-active {

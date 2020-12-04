@@ -58,7 +58,7 @@ Feel free to message me on SNS etc.`
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home {
   display: flex;
   flex-direction: column;
@@ -80,10 +80,13 @@ Feel free to message me on SNS etc.`
   font-size: 5.5rem;
   font-weight: normal;
   color: #2b5435;
+  span {
+    &:nth-child(n+7) {
+      color: #80b827;
+    }
+  }
 }
-.name span:nth-child(n+7) {
-  color: #80b827;
-}
+
 .work {
   color: #2b5435;
   margin-top: 0;

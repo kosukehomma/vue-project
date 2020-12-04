@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .output {
   display: flex;
   flex-direction: column;
