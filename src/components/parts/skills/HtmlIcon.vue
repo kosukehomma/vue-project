@@ -5,7 +5,7 @@
    </div>
 </template>
 
-<style>
+<style lang="scss">
 .skill-icons svg {
   width: 3rem;
   height: 3rem;

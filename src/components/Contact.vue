@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .contact {
   display: flex;
   flex-direction: column;

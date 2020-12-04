@@ -127,7 +127,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .skills {
   display: flex;
   flex-direction: column;

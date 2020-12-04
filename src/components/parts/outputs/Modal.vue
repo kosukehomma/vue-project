@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #overlay {
   z-index: 11;
   position: fixed;
