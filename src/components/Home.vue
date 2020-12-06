@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div class="container home">
     <section class="home-area">
       <h1 class="name">
         <span v-for="(item, key) in title" :key="key">{{ item }}</span>
       </h1>
       <h2 class="work catch">{{ work }}</h2>
       <p class="catch">{{ text }}</p>
-      <p class="catch-en">{{ text_en }}</p>
+      <p class="catch">{{ text_en }}</p>
       <div class="icon-area">
         <a href="https://www.facebook.com/honma.jams4511" target="_blank">
           <FacebookIcon />
@@ -60,26 +60,22 @@ Feel free to message me on SNS etc.`
 
 <style lang="scss" scoped>
 .home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: normal;
-  max-width: 100vw;
-  width: auto;
-  min-height: 90vh;
+  &-area {
+    text-align: left;
+    padding: 0 1.5rem;
+  }
 }
-.home-area {
-  text-align: left;
-  padding: 0 1.5rem;
-}
+
 .icon-area {
   width: 100%;
   margin-top: 2rem;
 }
+
 .name {
-  font-size: 5.5rem;
+  font-size: 6rem;
   font-weight: normal;
   color: #2b5435;
+
   span {
     &:nth-child(n+7) {
       color: #80b827;
@@ -93,13 +89,16 @@ Feel free to message me on SNS etc.`
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
+
 .catch {
   white-space:pre-wrap;
   padding-left: 1rem;
 }
 
-.catch-en {
-  white-space:pre-wrap;
-  padding-left: 1rem;
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .name {
+    font-size: 10.5vw;
+  }
 }
 </style>

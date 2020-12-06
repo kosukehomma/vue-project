@@ -1,6 +1,6 @@
 <template>
-  <div class="contact">
-    <h1>{{ title }}</h1>
+  <div class="container contact">
+    <h1 class="area-title">{{ title }}</h1>
     <section class="contact-form">
       <FormulateForm
       class="contact-form-wrapper"
@@ -96,23 +96,7 @@ export default {
 </script>
 
 <style lang="scss">
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: normal;
-  max-width: 100vw;
-  width: auto;
-  min-height: 100vh;
-}
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  margin: 2rem auto 2.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
-}
+
 .contact-form {
   max-width: 600px;
   width: 100%;

@@ -1,6 +1,6 @@
 <template>
-  <div class="output">
-    <h1>{{ title }}</h1>
+  <div class="container output">
+    <h1 class="area-title">{{ title }}</h1>
     <section class="output-items">
       <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
       v-bind:style="{
@@ -96,24 +96,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.output {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  max-width: 100vw;
-  width: auto;
-  text-align: center;
-}
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
-  text-align: center;
-  margin: 2rem auto 2.5rem;
-}
 
 .output-items {
   display: flex;

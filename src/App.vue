@@ -23,31 +23,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  color: #333;
-  font-family: 'Fjalla One', 'Kosugi', 'Montserrat', Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 0;
-  margin: 0;
-  background-image: url(./assets/img/bg.jpg);
-}
-h1 {
-  margin: 0;
-  padding: 0;
-}
-#app {
-  position: relative;
-  text-align: center;
-  padding-bottom: 60px;
-  height: 100%;
-  & > div {
-    padding-left: 250px;
-  }
-}
-// #app > div {
-//   padding-left: 250px;
-// }
 .v-enter {
   transform: translate(-50px, 0);
   opacity: 0;
@@ -68,11 +43,5 @@ h1 {
 }
 .v-leave-active {
   transition: all .5s 0s ease;
-}
-@media (max-width: 768px) {
-  #app > div {
-    padding-left: 0;
-    margin-top: 2.5rem;
-  }
 }
 </style>

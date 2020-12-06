@@ -1,7 +1,7 @@
 <template>
-  <div class="skills">
-    <section class="skill-area">
-      <h1>{{ title }}</h1>
+  <div class="container skills">
+    <section class="skills-area">
+      <h1 class="area-title">{{ title }}</h1>
       <h2>{{ lang }}</h2>
       <div class="skill-icons">
         <HtmlIcon />
@@ -129,25 +129,12 @@ export default {
 
 <style lang="scss" scoped>
 .skills {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  max-width: 100vw;
-  width: auto;
-  min-height: 100vh;
+  &-area {
+    text-align: left;
+    padding-left: 2rem;
+  }
 }
-.skill-area {
-  text-align: left;
-  padding-left: 2rem;
-}
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
-}
+
 h2 {
   color:#549752;
   margin-top: 0;

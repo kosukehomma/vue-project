@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/* --for PC & global-- */
 .sideMenu {
   background: #004015;
   width: 240px;
@@ -122,8 +123,8 @@ ol {
 li {
   width: 200px;
   height: 50px;
-  margin: auto;
-  font-size: 18px;
+  margin: 0 auto;
+  font-size: 1.25rem;
   position: relative;
   opacity: 0.6;
   transition: .4s ease;
@@ -150,7 +151,28 @@ a {
   line-height: 50px;
 }
 
-@media (max-width: 768px) {
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .sideMenu {
+    width: 160px;
+
+    span {
+      img {
+        max-width: 7.5rem;
+        max-height: 7.5rem;
+        border: .4rem solid #14a243;
+      }
+    }
+  }
+
+  li {
+    width: 100%;
+    height: 45px;
+  }
+}
+
+/* --for SP-- */
+@media (max-width: 559px) {
   .sideMenu {
     width: 100%;
     height: auto;
