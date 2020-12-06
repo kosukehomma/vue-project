@@ -70,13 +70,14 @@ export default {
           detail: `2004年2月より4年間、営業管理部として従事していたが、2008年4月に部署移動により、サイトのリニューアル、新設の求人専用サイトの立ち上げに携わる。`
         }
       ],
-      imgPath: require('@/assets/img/profile_image.jpg')
+      imgPath: require('@/assets/img/prof_dev.jpg')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+/* --for PC & global-- */
 .profile {
   padding-top: 3rem;
 
@@ -160,5 +161,14 @@ dd {
 .catch {
   white-space: pre-wrap;
   padding-left: 1rem;
+}
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+
+}
+
+/* --for SP-- */
+@media screen and (max-width: 559px){
+
 }
 </style>

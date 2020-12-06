@@ -42,6 +42,7 @@ footer > p {
   footer {
     width: 100%;
     background-color: #004015;
+    box-shadow: 0px -1px 4px #888;
   }
 }
 </style>

@@ -59,6 +59,7 @@ Feel free to message me on SNS etc.`
 </script>
 
 <style lang="scss" scoped>
+/* --for PC & global-- */
 .home {
   &-area {
     text-align: left;
@@ -72,9 +73,11 @@ Feel free to message me on SNS etc.`
 }
 
 .name {
-  font-size: 6rem;
+  font-size: 6.0rem;
   font-weight: normal;
   color: #2b5435;
+  margin-bottom: 3.5rem;
+  text-shadow: 10px 10px 1px #b2c9ab;
 
   span {
     &:nth-child(n+7) {
@@ -87,7 +90,7 @@ Feel free to message me on SNS etc.`
   color: #2b5435;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .catch {
@@ -97,8 +100,45 @@ Feel free to message me on SNS etc.`
 
 /* --for tablet-- */
 @media screen and (max-width: 959px){
+  .home {
+    &-area {
+      text-align: left;
+      padding: 0 .75rem;
+    }
+  }
+
   .name {
-    font-size: 10.5vw;
+    font-size: 10.6vw;
+  }
+
+  .catch {
+    padding: 0 1.25rem 0 .5rem;
+  }
+}
+
+/* --for SP-- */
+@media (max-width: 559px) {
+  .name {
+    font-size: 13vw;
+    margin-bottom: 1.5rem;
+  }
+  .work {
+    margin-bottom: 1.0rem;
+    font-size: 1.25rem;
+  }
+  .home-area {
+    padding: 0 .75rem;
+  }
+  .catch {
+    padding-left: .5rem;
+  }
+  .icon-area {
+    margin-top: 1.5rem;
+    svg {
+      width: 3rem;
+      height: 3rem;
+      margin: .5rem;
+    }
   }
 }
 </style>

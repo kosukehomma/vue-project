@@ -2,11 +2,15 @@
   <div class="container output">
     <h1 class="area-title">{{ title }}</h1>
     <section class="output-items">
-      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
+      <!-- <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
       v-bind:style="{
         'background-image': 'url(' + outputItem.thumb + ')'
-      }">
-        <h3> {{ outputItem.title }} </h3>
+      }"> -->
+      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)">
+        <figure class="thumbnail">
+          <img v-bind:src="outputItem.thumb">
+        </figure>
+        <h2 class="output-title"> {{ outputItem.title }} </h2>
         <p class="content-detail"> {{ outputItem.caption }} </p>
       </div>
       <modal :val="postItem" v-show="showContent" @close="closeModal" />
@@ -105,35 +109,54 @@ export default {
   flex-wrap: wrap;
 }
 
+// .content {
+//   background-color: #fbffec;
+//   display: inline-block;
+//   margin: 10px;
+//   width: 30%;
+//   min-width: 250px;
+//   box-shadow: 1px 2px 3px #6d6d6d;
+//   min-height: 100px;
+//   cursor: pointer;
+//   border-radius: 20px;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: top;
+//   padding-top: 150px;
+// }
 .content {
   background-color: #fbffec;
   display: inline-block;
   margin: 10px;
   width: 30%;
-  min-width: 250px;
+  max-width: 270px;
+  min-width: 180px;
   box-shadow: 1px 2px 3px #6d6d6d;
   min-height: 100px;
-  cursor: pointer;
   border-radius: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
-  padding-top: 150px;
+  cursor: pointer;
+
+  & > p {
+    width: 90%;
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 .thumbnail {
   margin: 0 0 -6px;
-}
 
-.thumbnail img {
+  img {
   max-width: 100%;
+  border-radius: 20px 20px 0 0;
+  }
 }
 
 .content-detail {
   margin: 0 0 1.5rem;
 }
 
-h3 {
+.output-title {
   color: #fff;
   font-weight: normal;
   padding: 0.5rem 0;
@@ -141,12 +164,6 @@ h3 {
   background: #688d6e;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
-}
-
-div.content > p {
-  width: 90%;
-  display: inline-block;
-  text-align: left;
 }
 
 </style>

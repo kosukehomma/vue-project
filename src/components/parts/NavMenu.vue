@@ -51,7 +51,7 @@ export default {
       activeItem: null,
       ActiveBtn: false,
       position: 0,
-      imgPath: require('@/assets/img/prof_develop.jpg')
+      imgPath: require('@/assets/img/catch_img.jpg')
     }
   },
   methods: {
@@ -177,17 +177,17 @@ a {
     width: 100%;
     height: auto;
     display: block;
-    padding: 0.5rem 0 0.5rem;
+    padding: 0.25rem 0 0.25rem;
     z-index: 10;
     text-align: left;
+    box-shadow: 0px 3px 5px #888;
     h1 {
       display: inline-block;
       color: #fff;
-      margin: 0.25rem 0.5rem 0.25rem;
+      margin: 0.4rem 0.5rem 0.25rem;
       font-weight: normal;
       &.myname {
-        text-shadow: none;
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       a {
         position: sticky;
@@ -195,48 +195,35 @@ a {
       }
     }
     span {
-      margin: 0 0 0 .25rem;
+      margin: .2rem 0 0 .5rem;
       float: left;
       img {
-        max-width: 2.5rem;
-        max-height: 2.5rem;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
         border: .2rem solid #14a243;
       }
     }
   }
-  .sticky {
-    background: rgba(200,200,200, 0.5);
-    text-align: left;
-    text-shadow: 0px 1px 2px #777;
-    color: white;
-    font-size: 2rem;
-    padding-left: 10px;
-    height: 2rem;
-    line-height: 4rem;
-  }
-  .sp-menu {
-    display: block;
-  }
-  .pc-menu {
-    display: none;
-  }
+
   .hamburger_btn {
     display: initial;
     width: 40px;
-    height: 42px;
+    height: 40px;
     cursor: pointer;
     z-index: 15;
     position: absolute;
-    top: 7px;
-    right: 7px;
+    top: 4px;
+    right: 6px;
     .line {
       position: absolute;
       top: 0;
-      left: 0px;
+      left: 4px;
       width: 32px;
       height: 2px;
       background: #fff;
       text-align: center;
+      float: none;
+      margin: 0;
     }
     .line_01 {
       top: 10px;
@@ -262,6 +249,21 @@ a {
   .btn_line03 {
     transform: translateY(-10px) rotate(45deg);
     transition: 0.4s ease;
+  }
+
+  ol {
+    position: absolute;
+    right: 0;
+    background: #004015dd;
+    width: 220px;
+    padding-bottom: 0.5rem;
+    margin-top: 7px;
+  }
+  li {
+    border-bottom: 1px solid #fff;
+    a {
+      padding-left: 1rem;
+    }
   }
 
   .sp-menu-enter {
@@ -290,16 +292,12 @@ a {
     transition: 0.4s ease;
   }
 
-  ol {
-    position: absolute;
-    right: 0;
-    background: #004015dd;
-    width: 220px;
-    padding-bottom: 0.5rem;
-    margin-top: 8px;
+  .sp-menu {
+    display: block;
   }
-  li {
-    border-bottom: 1px solid #fff;
+  .pc-menu {
+    display: none;
   }
 }
+
 </style>

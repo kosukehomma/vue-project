@@ -1,7 +1,9 @@
 @charset "utf-8";
 
+@use "./abstracts/variables";
+@use "./abstracts/mixins";
 @use "./layout/grid";
-@import "./layout/nav";
+@use "./layout/nav";
 
 /* --for PC & global-- */
 body {
@@ -39,7 +41,7 @@ h1 {
   max-width: 75vw;
   width: auto;
   min-height: 90vh;
-  margin: 0 auto;
+  margin: 0 auto 0 0;
 }
 
 .area-title {
@@ -49,6 +51,7 @@ h1 {
   margin-bottom: 4.5rem;
   text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
 }
+
 /* --for tablet-- */
 @media screen and (max-width: 959px){
   body {
@@ -66,7 +69,14 @@ h1 {
   #app {
     & > div {
       padding-left: 0;
-      margin-top: 2.5rem;
+      margin-top: 4rem;
     }
+  }
+
+  .container {
+    max-width: 100%;
+    width: auto;
+    min-height: 75vh;
+    margin: 0 auto;
   }
 }
