@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@use "./abstracts/variables";
-@use "./abstracts/mixins";
 @use "./layout/grid";
 @use "./layout/nav";
 
@@ -38,18 +36,18 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: normal;
-  max-width: 75vw;
+  max-width: 70vw;
   width: auto;
   min-height: 90vh;
   margin: 0 auto 0 0;
 }
 
 .area-title {
-  color: #2c8829;
-  font-size: 3.25rem;
+  color: #1e641c;
+  font-size: 2.75rem;
   font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
+  margin-bottom: 2rem;
+  text-shadow: 7px 8px 4px #a7df96;
 }
 
 /* --for tablet-- */
