@@ -48,6 +48,16 @@ h1 {
   font-weight: normal;
   margin-bottom: 2rem;
   text-shadow: 7px 8px 4px #a7df96;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 2.6rem;
+    background: #4aa381;
+    margin-right: 0.5rem;
+    margin-bottom: -4px;
+  }
 }
 
 /* --for tablet-- */

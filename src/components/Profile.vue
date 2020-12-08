@@ -14,7 +14,7 @@
     <section class="profile-area">
       <h1 class="area-title">{{ career }}</h1>
       <div class="career-box" v-for="(careerItem, index) in careerItems" :key=index>
-        <h2>{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
+        <h2 class="career-title">{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
         <dl>
           <dt class="catch">{{ careerItem.title }}</dt>
           <dd class="catch">{{ careerItem.detail }}</dd>
@@ -89,6 +89,7 @@ export default {
     max-width: 850px;
     width: 100%;
     margin-bottom: 2.5rem;
+    clear: both;
   }
   p {
     white-space:pre-wrap;
@@ -102,7 +103,8 @@ export default {
   &-box {
     position: relative;
     top: 25px;
-    background: rgba(255, 255, 255, 0.55);
+    background: #ffffff77;
+    box-shadow: 0px 0px 4px #a0b6a5;
     padding: 2.5rem 2.5rem 2.5rem 2rem;
     max-width: 590px;
     width: calc(71% - 40px);
@@ -148,24 +150,36 @@ export default {
 }
 
 .career-box {
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   margin-bottom: 1.5rem;
+  background-color: #ffffff55;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px #a0b6a5;
 }
 
-h2 {
+.career-title {
   color: #081607;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: normal;
   margin-bottom: 0.5rem;
+  position:relative;
 
   &::after {
     content: '';
     display: block;
-    width: 100%;
-    height: 1px;
+    width: 99%;
+    height: 4px;
     background-color: #0b4941;
-    background-image: linear-gradient(-65deg,#16235f,#01913d);
-    box-shadow: 2px 1px 3px rgb(112, 151, 108);
+    background-image: linear-gradient(-65deg,#256620,#66bd5a);
+    margin-top: 6px;
+  }
+
+  span {
+    display: inline-block;
+    font-size: .75rem;
+    position: absolute;
+    right: 1%;
+    bottom: 10px;
   }
 }
 
@@ -174,7 +188,7 @@ dl {
 }
 dt {
   font-size: .75rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 dd {
   font-size: .85rem;
@@ -183,11 +197,81 @@ dd {
 
 /* --for tablet-- */
 @media screen and (max-width: 959px){
+  .profile {
 
+    &-area {
+      padding: 0 1.0rem;
+      max-width: 750px;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .greeding {
+    &-box {
+      top: 15px;
+      padding: 1.5rem 1.5rem 1.5rem 1rem;
+      max-width: 370px;
+      width: calc(58% - 20px);
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    figure {
+      margin: 1rem 1rem 1rem 1.5rem;
+      img {
+        max-width: 240px;
+
+      }
+    }
+  }
 }
 
 /* --for SP-- */
 @media screen and (max-width: 559px){
+  .profile {
+    &-area {
+      padding: 0 .75rem;
+      max-width: 550px;
+      margin-bottom: 1.5rem;
+      width: 95.25%;
+    }
+  }
+  .greeding {
+    padding-top: .5rem;
+    margin-bottom: 0;
+    &-box {
+      position: relative;
+      top: -25px;
+      background: #ffffff77;
+      box-shadow: 0px 0px 4px #a0b6a5;
+      padding: 1rem 1.25rem;
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      z-index: 7;
+    }
+    figure {
+      margin: 1rem auto 0;
+      max-width: 300px;
+      img {
+        margin: auto;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+  .profile-img {
+    float: none;
+    position: static;
+    transform: translate(0 , -5px);
+  }
 
+  .career-box {
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff55;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #a0b6a5;
+  }
 }
 </style>
