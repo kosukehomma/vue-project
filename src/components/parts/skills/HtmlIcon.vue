@@ -6,21 +6,42 @@
 </template>
 
 <style lang="scss">
-.skill-icons svg {
-  width: 3rem;
-  height: 3rem;
-  margin: 0.75rem 0.75rem 0;
-  overflow: initial;
-  fill: rgb(88, 85, 85) !important;
+.skill-icons {
+  svg {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.75rem 0.75rem 0;
+    overflow: initial;
+    fill: rgb(88, 85, 85) !important;
+  }
 }
 .icon-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 0.75rem;
+  span {
+    font-size: 10px;
+    font-weight: bold;
+  }
 }
-.icon-layout span {
-  font-size: 10px;
-  font-weight: bold;
+
+@media screen and (max-width: 959px){
+  .skill-icons {
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0.5rem 0.5rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 559px){
+  .skill-icons {
+    svg {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
 }
 </style>

@@ -202,6 +202,7 @@ dd {
     &-area {
       padding: 0 1.0rem;
       max-width: 750px;
+      width: 95%;
       margin-bottom: 2.5rem;
     }
   }

@@ -155,7 +155,7 @@ a {
 @media screen and (max-width: 959px){
   .sideMenu {
     width: 160px;
-    height: 105vh;
+    height: 100%;
     span {
       img {
         max-width: 7.5rem;
