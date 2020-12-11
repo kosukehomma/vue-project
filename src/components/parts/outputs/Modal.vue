@@ -2,13 +2,19 @@
   <transition mode="out-in" name="modal" appear>
     <div id="overlay">
       <section class="modal">
+        <div class="modal-header">
+          <button class="close-btn" @click="$emit('close')"></button>
+        </div>
         <img :src="val.thumb">
-        <p>説明：{{ val.title }}</p>
-        <p>作業範囲：{{ val.detail }}</p>
-        <div>
-          使用技術：<component :is="val.lang"></component></div>
+        <dl class="modal-description">
+          <dt>{{ val.title }}</dt>
+          <dd>{{ val.detail }}</dd>
+        </dl>
+        <div class="modal-skillset">
+          <span>使用技術：</span><component :is="val.lang"></component>
+        </div>
         <p>URL：{{ val.url }}</p>
-        <button class="close-btn" @click="$emit('close')">CLOSE</button>
+
       </section>
       <div class="overwrap" @click="$emit('close')"></div>
     </div>
@@ -39,16 +45,41 @@ export default {
 
 .modal {
   z-index: 15;
-  width: 55%;
-  padding-top: 5em;
-  padding-bottom: 5em;
-  text-align: center;
+  max-width: 850px;
+  width: 65%;
+  padding: 3rem 3rem 2.5rem;
   background: #fff;
-  border-radius: 20px;
-}
+  border-radius: 15px;
+  box-shadow: 0 0 5px #444;
+  position: relative;
+  &-header {
+    position: absolute;
+    top: 0;
+    right: 1.5%;
+    height: 30px;
+  }
 
-.modal > img {
-  width: 95%;
+  & > img {
+    width: 100%;
+  }
+
+  &-description {
+    margin-top: 0;
+    dt {
+      font-size: 1.15rem;
+      padding: 0.35rem 0;
+      text-align: center;
+      border-top: 1px dashed #165821;
+      border-bottom: 1px dashed #165821;
+      background: #16582122;
+    }
+    dd {
+      margin: .25rem 0 1.5rem;
+      padding: 0 .5rem .5rem;
+      line-height: 2;
+      border-bottom: 1px dashed #165821;
+    }
+  }
 }
 
 .overwrap {
@@ -61,14 +92,15 @@ export default {
 }
 
 .close-btn {
-  font-size: 1.25rem;
-  color: #fff;
-  background-color: #658b66;
-  border: 1px solid #658a66;
-  box-shadow: 2px 2px 3px #646464;
-  padding: 0.25rem 1rem;
-  border-radius: 15px;
-  position: relative;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  &::before {
+    content: "×";
+    display: block;
+    font-size: 3rem;
+  }
 }
 
 .close-btn:focus {

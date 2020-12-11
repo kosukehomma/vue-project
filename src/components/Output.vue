@@ -1,20 +1,22 @@
 <template>
   <div class="container output">
-    <h1 class="area-title">{{ title }}</h1>
-    <section class="output-items">
-      <!-- <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
-      v-bind:style="{
-        'background-image': 'url(' + outputItem.thumb + ')'
-      }"> -->
-      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)">
-        <figure class="thumbnail">
-          <img v-bind:src="outputItem.thumb">
-        </figure>
-        <h2 class="output-title"> {{ outputItem.title }} </h2>
-        <p class="content-detail"> {{ outputItem.caption }} </p>
-      </div>
-      <modal :val="postItem" v-show="showContent" @close="closeModal" />
-    </section>
+    <div class="output-area">
+      <h1 class="area-title">{{ title }}</h1>
+      <section class="output-items">
+        <!-- <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
+        v-bind:style="{
+          'background-image': 'url(' + outputItem.thumb + ')'
+        }"> -->
+        <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)">
+          <figure class="thumbnail">
+            <img v-bind:src="outputItem.thumb">
+          </figure>
+          <h2 class="content-title"> {{ outputItem.title }} </h2>
+          <p class="content-detail"> {{ outputItem.caption }} </p>
+        </div>
+        <modal :val="postItem" v-show="showContent" @close="closeModal" />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -48,7 +50,8 @@ export default {
           title: '作品No.2',
           thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: 'ブログサイトになります。思った事を書いていこうかと、',
-          detail: 'ブログサイトになります。技術的な事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作る予定です。',
+          detail: `ブログサイトになります。技術的な事とか、好きな事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作れるといいな。
+そうしていこうかと現在情報収集中`,
           lang: SkillSet02,
           url: 'https://xxxxx.xxxx/'
         },
@@ -100,70 +103,103 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/* --for PC & global-- */
+.output {
+  padding-top: 3rem;
+  text-align: left;
 
-.output-items {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 1rem 0.25rem;
-  flex-wrap: wrap;
+  &-area {
+    padding: 0 1.5rem 0;
+    max-width: 1200px;
+    width: 96%;
+    margin-bottom: 1rem;
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 0 1rem;
+    flex-wrap: wrap;
+  }
 }
 
-// .content {
-//   background-color: #fbffec;
-//   display: inline-block;
-//   margin: 10px;
-//   width: 30%;
-//   min-width: 250px;
-//   box-shadow: 1px 2px 3px #6d6d6d;
-//   min-height: 100px;
-//   cursor: pointer;
-//   border-radius: 20px;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: top;
-//   padding-top: 150px;
-// }
 .content {
-  background-color: #fbffec;
+  background-color:  #ffffff55;
   display: inline-block;
-  margin: 10px;
-  width: 30%;
-  max-width: 270px;
-  min-width: 180px;
-  box-shadow: 1px 2px 3px #6d6d6d;
-  min-height: 100px;
-  border-radius: 20px;
+  margin: 15px auto;
+  max-width: 520px;
+  width: 29.5%;
+  min-width: 120px;
+  box-shadow: 0px 0px 4px #2b5c3b;
+  min-height: 140px;
+  border-radius: 15px;
   cursor: pointer;
 
-  & > p {
-    width: 90%;
-    display: inline-block;
+  &-title {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    padding: 0.35rem 0;
+    margin: 0;
+    background: #56805d;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-detail {
+    margin: .25rem auto 1.5rem;
+    width: 92%;
     text-align: left;
   }
+
 }
 
 .thumbnail {
-  margin: 0 0 -6px;
+  margin: 0 0 -4px;
 
   img {
   max-width: 100%;
-  border-radius: 20px 20px 0 0;
+  border-radius: 15px 15px 0 0;
   }
 }
 
-.content-detail {
-  margin: 0 0 1.5rem;
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .output {
+
+    &-area {
+      padding: 0 .5rem 0;
+      max-width: 750px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .content {
+    width: 31.5%;
+  }
 }
 
-.output-title {
-  color: #fff;
-  font-weight: normal;
-  padding: 0.5rem 0;
-  margin: 0;
-  background: #688d6e;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+/* --for tablet-ather -- */
+@media screen and (max-width: 769px){
+
+  .output-area {
+    padding: 0;
+    max-width: 575px;
+    margin-bottom: 0rem;
+  }
+  .content {
+    width: 46%;
+    margin: 10px auto;
+  }
 }
 
+/* --for tablet-ather -- */
+@media screen and (max-width: 559px){
+  .output-area {
+    padding: 0 .75rem;
+    width: 94%;
+  }
+}
 </style>
