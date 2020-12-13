@@ -39,15 +39,15 @@ export default {
       postItem: '',
       outputItems: [
         {
-          title: '作品No.1',
+          title: 'My Portfolio site',
           thumb: require('@/assets/img/output-thumb.jpg'),
           caption: 'このサイトです。vue-cliで制作しました。',
-          detail: 'このサイトです。もう少しデザインを洗練させたいです。アニメーションも付けたい',
+          detail: 'このサイトです。もう少しデザインを洗練させたいです。色々とアニメーションも付けたい。vue-cliで制作しました',
           lang: SkillSet01,
           url: 'https://xxxxx.xxxx/'
         },
         {
-          title: '作品No.2',
+          title: 'My first blog',
           thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: 'ブログサイトになります。思った事を書いていこうかと、',
           detail: `ブログサイトになります。技術的な事とか、好きな事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作れるといいな。

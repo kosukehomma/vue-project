@@ -72,10 +72,12 @@ export default {
 <style lang="scss">
 .skillsetarea {
   display: flex;
-}
-.icon-layout svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: .25rem .6rem;
+  flex-wrap: wrap;
+
+  .icon-layout svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0rem .5rem .25rem;
+  }
 }
 </style>

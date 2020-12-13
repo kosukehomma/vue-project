@@ -14,7 +14,7 @@
     <section class="profile-area">
       <h1 class="area-title">{{ career }}</h1>
       <div class="career-box" v-for="(careerItem, index) in careerItems" :key=index>
-        <h2 class="career-title">{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
+        <h2 class="sub-area-title">{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
         <dl>
           <dt class="catch">{{ careerItem.title }}</dt>
           <dd class="catch">{{ careerItem.detail }}</dd>
@@ -155,32 +155,6 @@ export default {
   background-color: #ffffff55;
   border-radius: 10px;
   box-shadow: 0px 0px 4px #a0b6a5;
-}
-
-.career-title {
-  color: #081607;
-  font-size: 1.05rem;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-  position:relative;
-
-  &::after {
-    content: '';
-    display: block;
-    width: 99%;
-    height: 4px;
-    background-color: #0b4941;
-    background-image: linear-gradient(-65deg,#256620,#66bd5a);
-    margin-top: 6px;
-  }
-
-  span {
-    display: inline-block;
-    font-size: .75rem;
-    position: absolute;
-    right: 1%;
-    bottom: 10px;
-  }
 }
 
 dl {

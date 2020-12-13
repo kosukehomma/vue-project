@@ -19,9 +19,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   span {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
   }
 }

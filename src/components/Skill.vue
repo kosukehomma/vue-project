@@ -142,29 +142,11 @@ export default {
   }
 }
 
-.sub-area-title {
-  color:#417940;
-  font-size: 1.25rem;
-  margin: .25rem 0 1.25rem;
-  margin-bottom: .75rem;
-  position:relative;
-
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #0b4941;
-    background-image: linear-gradient(-65deg,#b8e0b2,#417940);
-    margin-top: 6px;
-  }
-}
-
 .skill-icons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
   svg {
     width: 3rem;
