@@ -203,6 +203,7 @@ dd {
 /* --for SP-- */
 @media screen and (max-width: 559px){
   .profile {
+    padding-top: 0;
     &-area {
       padding: 0 .75rem;
       max-width: 550px;
