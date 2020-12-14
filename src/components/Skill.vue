@@ -1,8 +1,8 @@
 <template>
-  <div class="skills">
-    <section class="skill-area">
-      <h1>{{ title }}</h1>
-      <h2>{{ lang }}</h2>
+  <div class="container skills">
+    <section class="skills-area">
+      <h1 class="area-title">{{ title }}</h1>
+      <h2 class="sub-area-title">{{ lang }}</h2>
       <div class="skill-icons">
         <HtmlIcon />
         <CssIcon />
@@ -29,13 +29,15 @@
         <!-- <PhpIcon /> -->
         <!-- <YarnIcon /> -->
       </div>
-      <h2>{{ work }}</h2>
-      <ul>
+    </section>
+    <section class="skills-area">
+      <h2 class="sub-area-title">{{ work }}</h2>
+      <ul class="skill-list">
         <li>スマホ、タブレットでも快適に閲覧できるレスポンシブデザインを制作できます。</li>
         <li>人材サービス会社のwebサイトからはじまり、様々な企業、店舗のサイト作りを手掛けてきた経験から、ご希望のデザイン案に沿ってより生産的なコーディングを行います。</li>
       </ul>
-      <h2>Favorite</h2>
-      <ul>
+      <h2 class="sub-area-title">Favorite</h2>
+      <ul class="skill-list">
         <li>YouTubeで動画巡り</li>
         <li>Funk Music</li>
       </ul>
@@ -127,45 +129,78 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+/* --for PC & global-- */
 .skills {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  max-width: 100vw;
-  width: auto;
-  min-height: 100vh;
-}
-.skill-area {
   text-align: left;
-  padding-left: 2rem;
+
+  &-area {
+    padding: 0 1.5rem 0;
+    max-width: 850px;
+    width: 93%;
+    margin-bottom: 2.5rem;
+  }
 }
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
-}
-h2 {
-  color:#549752;
-  margin-top: 0;
-  margin-bottom: 1.25rem;
-  font-size: 1.25rem;
-}
+
 .skill-icons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
-  max-width: 640px;
+  max-width: 820px;
+  margin: 0 auto;
+  svg {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.75rem 0.75rem;
+    overflow: initial;
+    fill: rgb(88, 85, 85) !important;
+  }
 }
-.skill-icons svg {
-  width: 3rem;
-  height: 3rem;
-  margin: 0.75rem 0.75rem;
-  overflow: initial;
-  fill: rgb(88, 85, 85) !important;
+
+.skill-list {
+  padding: 0 .75rem 0 1.5rem;
+  margin-bottom: 1.5rem;
+
+  li {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 0.5rem;
+    &::before {
+      content: "";
+      top: 4px;
+      left: -20px;
+      width: 15px;
+      height: 10px;
+      position: absolute;
+      background-image: url(../assets/img/list-mark.png);
+    }
+  }
+}
+
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .skills {
+    &-area {
+      padding: 0 .5rem 0;
+      max-width: 750px;
+      width: 90%;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+/* --for SP-- */
+@media screen and (max-width: 559px){
+  .skills {
+    &-area {
+      max-width: 100%x;
+      width: 95%;
+      margin: 0 auto 1.5rem;
+    }
+  }
+  .skill-icons {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>

@@ -2,13 +2,26 @@
   <transition mode="out-in" name="modal" appear>
     <div id="overlay">
       <section class="modal">
-        <img :src="val.thumb">
-        <p>説明：{{ val.title }}</p>
-        <p>作業範囲：{{ val.detail }}</p>
-        <div>
-          使用技術：<component :is="val.lang"></component></div>
-        <p>URL：{{ val.url }}</p>
-        <button class="close-btn" @click="$emit('close')">CLOSE</button>
+        <div class="modal-header">
+          <h1 class="area-title">{{ val.title }}</h1>
+        </div>
+        <figure class="modal-capture">
+          <img :src="val.thumb">
+        </figure>
+        <div class="modal-description">
+          <h2 class="sub-area-title">Description</h2>
+          <p>{{ val.detail }}</p>
+        </div>
+        <div class="modal-skillset">
+          <h2 class="sub-area-title">Language / tool</h2>
+          <component :is="val.lang"></component>
+        </div>
+        <div class="modal-link">
+          <p><span>URL</span><a :href="val.url" target="_blank">{{ val.url }}</a></p>
+        </div>
+        <div class="modal-closed">
+          <button class="close-btn" @click="$emit('close')"></button>
+        </div>
       </section>
       <div class="overwrap" @click="$emit('close')"></div>
     </div>
@@ -22,7 +35,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+/* --for PC & global-- */
 #overlay {
   z-index: 11;
   position: fixed;
@@ -39,16 +53,68 @@ export default {
 
 .modal {
   z-index: 15;
-  width: 55%;
-  padding-top: 5em;
-  padding-bottom: 5em;
-  text-align: center;
+  max-width: 800px;
+  width: 65%;
+  padding: 3rem 3rem 2.5rem;
   background: #fff;
-  border-radius: 20px;
-}
+  border-radius: 15px;
+  box-shadow: 0 0 5px #444;
+  position: relative;
 
-.modal > img {
-  width: 95%;
+  &-header {
+    .area-title {
+      font-size: 1.55rem;
+      margin-bottom: .75rem;
+      text-shadow: 3px 4px 5px #b3d3a7;
+      &::before {
+        width: 7px;
+        height: 1.6rem;
+        margin-right: .35rem;
+      }
+    }
+  }
+
+  &-capture {
+    margin: 0 auto;
+    text-align: center;
+
+    > img {
+      width: 85%;
+    }
+  }
+
+  &-description {
+    margin: 0 auto 1.5rem;
+    p {
+      margin-top: 0;
+      padding: 0 0.5rem;
+      font-size: .85rem;
+    }
+  }
+
+  &-skillset {
+    margin-bottom: 1.5rem;
+  }
+
+  &-link {
+    font-family: Arial,'Kosugi', sans-serif;
+
+    span {
+      background: #ddd;
+      border: 1px solid #666;
+      border-radius: 5px;
+      padding: 0.05rem 0.25rem;
+      margin-right: .5rem;
+      color: #12692f;
+    }
+  }
+
+  &-closed {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    height: 30px;
+  }
 }
 
 .overwrap {
@@ -61,23 +127,26 @@ export default {
 }
 
 .close-btn {
-  font-size: 1.25rem;
-  color: #fff;
-  background-color: #658b66;
-  border: 1px solid #658a66;
-  box-shadow: 2px 2px 3px #646464;
-  padding: 0.25rem 1rem;
-  border-radius: 15px;
   position: relative;
-}
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 3rem;
+  background: transparent;
+  transition: .4s;
+  &::before {
+    content: "×";
+    display: block;
+    font-size: 3.5rem;
+  }
+  &:focus {
+    outline: none;
+  }
 
-.close-btn:focus {
-  outline: none;
-}
-
-.close-btn:active {
-  top: 2px;
-  left: 2px;
+  &:active,
+  &:hover {
+    transform: rotate(90deg);
+  }
 }
 
 .modal-enter-active,
@@ -92,5 +161,88 @@ export default {
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
+}
+
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  #overlay {
+    padding-left: 80px;
+  }
+  .modal {
+    max-width: 600px;
+    min-height:65%;
+    width: 52%;
+    padding: 2rem 2rem 1.5rem;
+
+    &-capture {
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+  .close-btn {
+    &::before {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+/* --for SP-- */
+@media screen and (max-width: 559px){
+  #overlay {
+    padding-left: 0;
+  }
+
+  .modal {
+    max-width: 450px;
+    min-height:50%;
+    width: 75%;
+    padding: 1.5rem 1.05rem .75rem;
+    &-header {
+      .area-title {
+        font-size: 1.15rem;
+        margin-bottom: .5rem;
+        &::before {
+          width: 5px;
+          height: 1.2rem;
+        }
+      }
+    }
+    &-description {
+      margin: 0 auto .5rem;
+      p {
+        padding: 0 .25rem;
+        font-size: .7rem;
+      }
+    }
+
+    &-skillset {
+      margin-bottom: .5rem;
+    }
+
+    &-link {
+      font-size: .75rem;
+    }
+
+    .sub-area-title {
+      font-size: .85rem;
+      margin-bottom: .5rem;
+    }
+
+    .skillsetarea {
+      .icon-layout {
+        margin: 0 .15rem .15rem;
+        span {
+          font-size: 9px;
+          font-weight: normal;
+        }
+        svg {
+          width: 1.7rem;
+          height: 1.7rem;
+          margin: 0 .05rem .15rem;
+        }
+      }
+    }
+  }
 }
 </style>

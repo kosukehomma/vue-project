@@ -1,18 +1,20 @@
 <template>
-  <div class="profile">
+  <div class="container profile">
     <section class="profile-area">
-      <h1>{{ profile }}</h1>
+      <h1 class="area-title">{{ profile }}</h1>
       <div class="greeding">
-        <p class="catch">{{ greeding }}</p>
         <figure class="profile-img">
           <img v-bind:src="imgPath">
         </figure>
+        <div class="greeding-box">
+          <p>{{ greeding }}</p>
+        </div>
       </div>
     </section>
     <section class="profile-area">
-      <h1>{{ career }}</h1>
+      <h1 class="area-title">{{ career }}</h1>
       <div class="career-box" v-for="(careerItem, index) in careerItems" :key=index>
-        <h2>{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
+        <h2 class="sub-area-title">{{ careerItem.job }} <span>{{ careerItem.period }}</span></h2>
         <dl>
           <dt class="catch">{{ careerItem.title }}</dt>
           <dd class="catch">{{ careerItem.detail }}</dd>
@@ -70,107 +72,182 @@ export default {
           detail: `2004年2月より4年間、営業管理部として従事していたが、2008年4月に部署移動により、サイトのリニューアル、新設の求人専用サイトの立ち上げに携わる。`
         }
       ],
-      imgPath: require('@/assets/img/profile_image.jpg')
+      imgPath: require('@/assets/img/prof_dev.jpg')
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+/* --for PC & global-- */
 .profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: normal;
-  max-width: 100vw;
-  width: auto;
-  min-height: 100vh;
   padding-top: 3rem;
-}
-.profile-area {
-  text-align: left;
-  padding: 0 1.5rem;
-  margin-bottom: 2rem;
-}
-.greeding {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.greeding p {
-  background: rgba(255, 255, 255, 0.6);
-  padding: 3rem 2rem;
-}
-.greeding figure img {
-  max-width: 240px;
-}
-.profile-img {
-  position: relative;
-  right: 2%;
-}
-.profile-img::before,
-.profile-img::after {
-  content: "";
-  position: absolute;
-  display: block;
-  background-image: linear-gradient(-65deg,#16235f,#01913d);
-  width: 112px;
-  height: 112px;
-  z-index: -1;
-}
-.profile-img::before {
-  top: 0;
-  left: 0;
-  margin-top: -10px;
-  margin-left: -10px;
-}
-.profile-img::after {
-  bottom: 0;
-  right: 0;
-  margin-bottom: -6px;
-  margin-right: -10px;
-}
-.career-box {
-  padding: 0 0.75rem;
-  margin-bottom: 1.5rem;
-}
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
+
+  &-area {
+    text-align: left;
+    padding: 0 1.5rem;
+    max-width: 850px;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    clear: both;
+  }
+  p {
+    white-space:pre-wrap;
+  }
 }
 
-h2 {
-  color: #081607;
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
+.greeding {
+  position: relative;
+  padding-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  &-box {
+    position: relative;
+    top: 25px;
+    background: #ffffff77;
+    box-shadow: 0px 0px 4px #a0b6a5;
+    padding: 2.5rem 2.5rem 2.5rem 2rem;
+    max-width: 590px;
+    width: calc(71% - 40px);
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  figure {
+    margin: 1rem 1rem 1rem 2rem;
+    img {
+      max-width: 260px;
+
+    }
+  }
 }
-h2::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #0b4941;
-  background-image: linear-gradient(-65deg,#16235f,#01913d);
-  box-shadow: 2px 1px 3px rgb(112, 151, 108);
+
+.profile-img {
+  float: right;
+  position: absolute;
+  right: 2%;
+  transform: translate(0 , -35px);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: linear-gradient(-65deg,#16235f,#01913d);
+    width: 112px;
+    height: 112px;
+    z-index: -1;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+    margin-bottom: -6px;
+    margin-right: -10px;
+  }
 }
+
+.career-box {
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff55;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px #a0b6a5;
+}
+
 dl {
   margin-top: 0.5rem;
 }
 dt {
   font-size: .75rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 dd {
   font-size: .85rem;
   margin-left: 0;
 }
-.catch {
-  white-space: pre-wrap;
-  padding-left: 1rem;
+
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .profile {
+
+    &-area {
+      padding: 0 1.0rem;
+      max-width: 750px;
+      width: 95%;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .greeding {
+    &-box {
+      top: 15px;
+      padding: 1.5rem 1.5rem 1.5rem 1rem;
+      max-width: 370px;
+      width: calc(58% - 20px);
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    figure {
+      margin: 1rem 1rem 1rem 1.5rem;
+      img {
+        max-width: 240px;
+
+      }
+    }
+  }
+}
+
+/* --for SP-- */
+@media screen and (max-width: 559px){
+  .profile {
+    padding-top: 0;
+    &-area {
+      padding: 0 .75rem;
+      max-width: 550px;
+      margin-bottom: 1.5rem;
+      width: 95.25%;
+    }
+  }
+  .greeding {
+    padding-top: .5rem;
+    margin-bottom: 0;
+    &-box {
+      position: relative;
+      top: -25px;
+      background: #ffffff77;
+      box-shadow: 0px 0px 4px #a0b6a5;
+      padding: 1rem 1.25rem;
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      z-index: 7;
+    }
+    figure {
+      margin: 1rem auto 0;
+      max-width: 300px;
+      img {
+        margin: auto;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+  .profile-img {
+    float: none;
+    position: static;
+    transform: translate(0 , -5px);
+  }
+
+  .career-box {
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff55;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #a0b6a5;
+  }
 }
 </style>

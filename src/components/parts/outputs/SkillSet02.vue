@@ -67,14 +67,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.skillsetarea {
-  display: flex;
-}
-.icon-layout svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: .25rem .6rem;
-}
-</style>

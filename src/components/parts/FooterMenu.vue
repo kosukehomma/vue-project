@@ -15,8 +15,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+/* --for PC & global-- */
 footer {
   width: 240px;
   position: fixed;
@@ -29,10 +29,20 @@ footer > p {
   margin: 0.5rem;
 }
 
-@media (max-width: 768px) {
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  footer {
+    width: 160px;
+    font-size: .8rem;
+  }
+}
+
+/* --for SP-- */
+@media (max-width: 559px) {
   footer {
     width: 100%;
     background-color: #004015;
+    box-shadow: 0px -1px 4px #888;
   }
 }
 </style>

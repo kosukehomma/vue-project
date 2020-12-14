@@ -16,3 +16,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+require('@/assets/scss/main.scss')

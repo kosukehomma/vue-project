@@ -1,16 +1,22 @@
 <template>
-  <div class="output">
-    <h1>{{ title }}</h1>
-    <section class="output-items">
-      <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
-      v-bind:style="{
-        'background-image': 'url(' + outputItem.thumb + ')'
-      }">
-        <h3> {{ outputItem.title }} </h3>
-        <p class="content-detail"> {{ outputItem.caption }} </p>
-      </div>
-      <modal :val="postItem" v-show="showContent" @close="closeModal" />
-    </section>
+  <div class="container output">
+    <div class="output-area">
+      <h1 class="area-title">{{ title }}</h1>
+      <section class="output-items">
+        <!-- <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)"
+        v-bind:style="{
+          'background-image': 'url(' + outputItem.thumb + ')'
+        }"> -->
+        <div class="content" v-for="(outputItem, index) in outputItems" :key=index @click="openModal(outputItem)">
+          <figure class="thumbnail">
+            <img v-bind:src="outputItem.thumb">
+          </figure>
+          <h2 class="content-title"> {{ outputItem.title }} </h2>
+          <p class="content-detail"> {{ outputItem.caption }} </p>
+        </div>
+        <modal :val="postItem" v-show="showContent" @close="closeModal" />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -33,18 +39,19 @@ export default {
       postItem: '',
       outputItems: [
         {
-          title: '作品No.1',
+          title: 'My Portfolio site',
           thumb: require('@/assets/img/output-thumb.jpg'),
           caption: 'このサイトです。vue-cliで制作しました。',
-          detail: 'このサイトです。もう少しデザインを洗練させたいです。アニメーションも付けたい',
+          detail: 'このサイトです。もう少しデザインを洗練させたいです。色々とアニメーションも付けたい。vue-cliで制作しました',
           lang: SkillSet01,
           url: 'https://xxxxx.xxxx/'
         },
         {
-          title: '作品No.2',
+          title: 'My first blog',
           thumb: require('@/assets/img/output-thumb_dummy.jpg'),
           caption: 'ブログサイトになります。思った事を書いていこうかと、',
-          detail: 'ブログサイトになります。技術的な事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作る予定です。',
+          detail: `ブログサイトになります。技術的な事とか、好きな事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作れるといいな。
+そうしていこうかと現在情報収集中`,
           lang: SkillSet02,
           url: 'https://xxxxx.xxxx/'
         },
@@ -95,76 +102,104 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+/* --for PC & global-- */
 .output {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  max-width: 100vw;
-  width: auto;
-  text-align: center;
-}
-h1 {
-  color: #2c8829;
-  font-size: 3.25rem;
-  font-weight: normal;
-  margin-bottom: 4.5rem;
-  text-shadow: 25px 45px 1px #a7df96, 0px 0px 0px #034210;
-  text-align: center;
-  margin: 2rem auto 2.5rem;
-}
+  padding-top: 3rem;
+  text-align: left;
 
-.output-items {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 1rem 0.25rem;
-  flex-wrap: wrap;
+  &-area {
+    padding: 0 1.5rem 0;
+    max-width: 1200px;
+    width: 96%;
+    margin-bottom: 1rem;
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 0 1rem;
+    flex-wrap: wrap;
+  }
 }
 
 .content {
-  background-color: #fbffec;
+  background-color:  #ffffff55;
   display: inline-block;
-  margin: 10px;
-  width: 30%;
-  min-width: 250px;
-  box-shadow: 1px 2px 3px #6d6d6d;
-  min-height: 100px;
+  margin: 15px auto;
+  max-width: 520px;
+  width: 29.5%;
+  min-width: 120px;
+  box-shadow: 0px 0px 4px #2b5c3b;
+  min-height: 140px;
+  border-radius: 15px;
   cursor: pointer;
-  border-radius: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
-  padding-top: 150px;
+
+  &-title {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    padding: 0.35rem 0;
+    margin: 0;
+    background: #56805d;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-detail {
+    margin: .25rem auto 1.5rem;
+    width: 92%;
+    text-align: left;
+  }
+
 }
 
 .thumbnail {
-  margin: 0 0 -6px;
-}
+  margin: 0 0 -4px;
 
-.thumbnail img {
+  img {
   max-width: 100%;
+  border-radius: 15px 15px 0 0;
+  }
 }
 
-.content-detail {
-  margin: 0 0 1.5rem;
+/* --for tablet-- */
+@media screen and (max-width: 959px){
+  .output {
+
+    &-area {
+      padding: 0 .5rem 0;
+      max-width: 750px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .content {
+    width: 31.5%;
+  }
 }
 
-h3 {
-  color: #fff;
-  font-weight: normal;
-  padding: 0.5rem 0;
-  margin: 0;
-  background: #688d6e;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+/* --for tablet-ather -- */
+@media screen and (max-width: 769px){
+
+  .output-area {
+    padding: 0;
+    max-width: 575px;
+    margin-bottom: 0rem;
+  }
+  .content {
+    width: 46%;
+    margin: 10px auto;
+  }
 }
 
-div.content > p {
-  width: 90%;
-  display: inline-block;
-  text-align: left;
+/* --for tablet-ather -- */
+@media screen and (max-width: 559px){
+  .output-area {
+    padding: 0 .75rem;
+    width: 94%;
+  }
 }
-
 </style>
