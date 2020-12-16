@@ -137,18 +137,18 @@ li {
     pointer-events: none;
     opacity: 1;
   }
-}
+    /*  router-linkがaタグとして表示されてたのでスタイルをaタグに書いた*/
+  a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+  }
 
-/*  router-linkがaタグとして表示されてたのでスタイルをaタグに書いた*/
-a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  text-decoration: none;
-  line-height: 50px;
 }
 
 /* --for tablet-- */
