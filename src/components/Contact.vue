@@ -8,8 +8,8 @@
         name="contact"
         method="POST"
         v-model="formValues"
-        @submit="submitHandler"
         netlify
+        data-netlify="true"
         >
           <!-- <p>
             <label>YOUR NAME</label><br>
@@ -89,11 +89,11 @@ export default {
       formValues: {}
     }
   },
-  methods: {
-    submitHandler (data) {
-      alert(`お問い合わせありがとうございます。${data.name}`)
-    }
-  }
+  // methods: {
+  //   submitHandler (data) {
+  //     alert(`お問い合わせありがとうございます。${data.name}`)
+  //   }
+  // }
 }
 </script>
 
