@@ -16,8 +16,8 @@
             <label>YOUR NAME</label><br>
             <input type="text" name="name">
           </p> -->
-          <FormulateInput type="hidden" name="bot-field">
-          <FormulateInput type="hidden" name="form-name" value="contact">
+          <FormulateInput type="hidden" name="bot-field" />
+          <FormulateInput type="hidden" name="form-name" value="contact" />
           <FormulateInput
           type="text"
           name="name"
@@ -91,7 +91,7 @@ export default {
       // text: 'フォームとかSNSのアイコンとか載せてくよ'
       formValues: {}
     }
-  },
+  }
   // methods: {
   //   submitHandler (data) {
   //     alert(`お問い合わせありがとうございます。${data.name}`)
