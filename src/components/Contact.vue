@@ -8,13 +8,16 @@
         name="contact"
         method="POST"
         v-model="formValues"
-        netlify
+        action=""
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
         >
           <!-- <p>
             <label>YOUR NAME</label><br>
             <input type="text" name="name">
           </p> -->
+          <FormulateInput type="hidden" name="bot-field">
+          <FormulateInput type="hidden" name="form-name" value="contact">
           <FormulateInput
           type="text"
           name="name"
