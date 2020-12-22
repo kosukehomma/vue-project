@@ -3,15 +3,14 @@
     <div class="contact-area">
       <h1 class="area-title">{{ title }}</h1>
       <section class="contact-form">
-        <!-- <FormulateForm
+        <FormulateForm
         class="contact-form-wrapper"
         name="contact"
         method="POST"
         v-model="formValues"
         action=""
         data-netlify="true"
-        > -->
-        <form class="contact-form-wrapper formulate-form formulate-form--contact" name="contact" method="POST" action="" data-netlify="true">
+        >
 
           <input type="hidden" name="form-name" value="contact" />
           <!-- <p>
@@ -76,8 +75,7 @@
             label="SEND"
             />
           </div>
-        </form>
-        <!-- </FormulateForm> -->
+        </FormulateForm>
       </section>
     </div>
   </div>
