@@ -3,101 +3,146 @@
     <div class="contact-area">
       <h1 class="area-title">{{ title }}</h1>
       <section class="contact-form">
-        <!-- <FormulateForm
-        class="contact-form-wrapper"
-        name="contact"
-        method="POST"
-        v-model="formValues"
-        action=""
-        data-netlify="true"
-        > -->
-        <form class="contact-form-wrapper formulate-form formulate-form--contact" name="contact" method="POST" action="" data-netlify="true">
+        <validation-observer ref="observer" v-slot="{ invalid, validated }" tag="form" class="contact-form-wrapper" name="contact" method="POST" data-netlify="true" @submit.prevent="onSubmit" :class="sendingClass">
 
           <input type="hidden" name="form-name" value="contact" />
-          <!-- <p>
-            <label>YOUR NAME</label><br>
-            <input type="text" name="name">
-          </p> -->
-          <FormulateInput
-          type="text"
-          name="name"
-          v-model="name"
-          class="req"
-          label="YOUR NAME"
-          placeholder="your name"
-          validation="required|max:15"
-          :validation-messages="{ required: 'YOUR NAMEは必須項目です',max: '15文字以内で入力して下さい' }"
-          />
-          <!-- <p>
-            <label>YOUR EMAIL</label><br>
-            <input type="email" name="email">
-          </p> -->
-          <FormulateInput
-          type="email"
-          name="email"
-          v-model="email"
-          class="req"
-          label="YOUR EMAIL"
-          placeholder="Email address"
-          validation="required|email"
-          :validation-messages="{ required: 'YOUR EMAILは必須項目です', email: `有効なメールアドレスではありません` }"
-          />
-          <!-- <p>
-            <label>COMPANY</label><br>
-            <input type="text" name="conpany">
-          </p> -->
-          <FormulateInput
-          type="text"
-          name="company"
-          v-model="company"
-          label="COMPANY"
-          placeholder="your company"
-          />
-          <!-- <p>
-            <label>MESSAGE</label><br>
-            <textarea></textarea>
-          </p> -->
-          <FormulateInput
-          name="message"
-          type="textarea"
-          v-model="message"
-          class="req"
-          label="MESSAGE"
-          placeholder="何かメッセージや聞きたい事がございましたらこちらに入力してください。"
-          validation="required"
-          :validation-messages="{ required: '必須項目になります' }"
-          />
-          <!-- <p class="btn_area">
-            <button id="send" class="send_btn">SEND</button>
-          </p> -->
-          <div class="btn_area">
-            <FormulateInput
-            type="submit"
-            label="SEND"
-            />
+          <div class="form-content">
+            <label for="name" class="req">YOUR NAME</label><br>
+            <validation-provider
+            v-slot="{ errors }"
+            rules="required|max:20"
+            name="お名前"
+            >
+              <input
+              type="text"
+              name="name"
+              v-model="name"
+              placeholder="your name"
+              autocomplete="name"
+              >
+              <span class="v-message" v-show="errors.length">
+                {{ errors[0] }}
+              </span>
+            </validation-provider>
           </div>
-        </form>
-        <!-- </FormulateForm> -->
+          <div class="form-content">
+            <label for="email" class="req">YOUR EMAIL</label><br>
+            <validation-provider
+            v-slot="{ errors }"
+            rules="required|email|max:60"
+            name="メールアドレス"
+            >
+              <input
+              type="email"
+              placeholder="Email address"
+              v-model="email"
+              name="email"
+              autocomplete="email"
+              >
+              <span class="v-message" v-show="errors.length">
+                {{ errors[0] }}
+              </span>
+            </validation-provider>
+          </div>
+          <div class="form-content">
+            <label>COMPANY</label><br>
+            <input type="text" name="conpany" v-model="company" placeholder="your company">
+          </div>
+          <div class="form-content">
+            <label for="message" class="req">MESSAGE</label><br>
+            <validation-provider
+            v-slot="{ errors }"
+            rules="required|max:1000"
+            name="メッセージ"
+            >
+              <textarea
+              name="message"
+              v-model="message"
+              placeholder="何かメッセージや聞きたい事がございましたらこちらに入力してください。"
+              >
+              </textarea>
+              <span class="v-message" v-show="errors.length">
+                {{ errors[0] }}
+              </span>
+            </validation-provider>
+          </div>
+          <div class="form-content btn_area">
+            <button
+            type="submit"
+            id="send"
+            class="send_btn"
+            :disabled="invalid || !validated"
+            >SEND</button>
+          </div>
+        </validation-observer>
       </section>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'Home',
   data () {
     return {
       title: 'CONTACT',
-      // text: 'フォームとかSNSのアイコンとか載せてくよ'
-      formValues: {}
+      formValues: {},
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+      isSubmit: false,
+      isSending: false,
+      isError: false,
+      completeMessage: ''
+    }
+  },
+  computed: {
+    sendingClass () {
+      return {
+        'is-sending': this.isSending,
+        'is-error': this.isError,
+        'is-complete': this.isSubmit
+      }
+    }
+  },
+  methods: {
+    onSubmit () {
+      if (this.isSending) {
+        return
+      }
+      this.isSending = true
+      this.completeMessage = '送信処理中…'
+      const params = new URLSearchParams()
+      params.append('form-name', 'contact')
+      params.append('name', this.name)
+      params.append('email', this.email)
+      params.append('message', this.message)
+      this.$axios
+        .$post('/', params)
+        .then(() => {
+          this.completeMessage = 'お問い合わせを送信しました。'
+          this.resetForm()
+          this.isSubmit = true
+        })
+        /* eslint handle-callback-err: "warn" */
+        .catch(() => {
+          this.complateMessage = 'お問い合わせの送信が失敗しました。'
+          this.isError = true
+        })
+        .finally(() => {
+          this.isSending = false
+        })
+    },
+
+    resetForm () {
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      this.isError = false
+      this.$refs.observer.reset()
     }
   }
-  // methods: {
-  //   submitHandler (data) {
-  //     alert(`お問い合わせありがとうございます。${data.name}`)
-  //   }
-  // }
 }
 </script>
 
@@ -126,11 +171,13 @@ export default {
     font-size: 20px;
     text-align: left;
     margin-bottom: .25rem;
-
-    sup {
-      color: #c03838;
-      font-size: 22px;
+    &.req {
+      &::after {
+        content: " *";
+        color: #c03838;
+      }
     }
+
   }
 
   input,
@@ -142,7 +189,7 @@ export default {
     border: 2px solid #dddddd;
     appearance: none;
     line-height: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: .25rem;
     font-family: 'Kosugi', Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
   }
 
@@ -153,40 +200,29 @@ export default {
   .btn_area{
     text-align: right;
   }
-}
-
-.req label:after {
-  content: " *";
-  color: #c03838;
-}
-.formulate-input {
-  margin-top: 1rem;
-  margin-bottom: .25rem;
-
-  ul {
-    list-style: none;
-    padding-left: .5rem;
-    font-size: 14px;
-    margin-top: 0;
-
-    li {
-      color:  #c03838;
-
-      &::before {
-        content: "※";
-        margin-right: 0.25rem;
-        display: inline-block;
-      }
+  p {
+    font-size: .75rem;
+    span {
+      color: #c03838;
     }
   }
 }
-
+.form-content {
+  font-size: .75rem;
+  min-height: 5.3rem;
+  margin-bottom: .75rem;
+  position: relative;
+  .v-message {
+    color: #c03838;
+  }
+}
 .send_btn {
   background-color: #2e740d;
+  min-height: auto;
   color: #fff;
   padding: .5rem 1.25rem;
-  font-size: 16px;
-  font-family: 'Kosugi', Helvetica, 'Avenir', Arial,'Century Gothic',  sans-serif;
+  font-size: 18px;
+  font-family:  Helvetica, 'Avenir','Century Gothic',  sans-serif;
   box-shadow: 1px 2px 2px #777;
   border: none;
   border-radius: 20px;
@@ -199,27 +235,9 @@ export default {
     left: 1px;
     box-shadow: 0px 1px 1px #777;
   }
-}
-
-.formulate-input-element--submit button {
-  background-color: #2e740d;
-  color: #fff;
-  padding: .5rem 1.25rem;
-  font-size: 18px;
-  font-family:  Helvetica, 'Avenir','Century Gothic',  sans-serif;
-  box-shadow: 1px 2px 2px #777;
-  border: none;
-  border-radius: 20px;
-  position: relative;
-  cursor: pointer;
-  letter-spacing: 1px;
-  &:focus {
-    outline:none;
-  }
-  &:active {
-    top: 1px;
-    left: 1px;
-    box-shadow: 0px 1px 1px #777;
+  &:disabled {
+    background-color:#777;
+    opacity: .3;
   }
 }
 

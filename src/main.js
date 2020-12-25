@@ -3,9 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueFormulate from '@braid/vue-formulate'
-
-Vue.use(VueFormulate)
+import './plugins/vee-validate'
 
 Vue.config.productionTip = false
 
