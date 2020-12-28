@@ -192,6 +192,13 @@ li {
       a {
         position: sticky;
         line-height: 1;
+        &:link,
+        &:visited {
+          color: #fff;
+        }
+        &:active {
+          text-decoration: none;
+        }
       }
     }
     span {

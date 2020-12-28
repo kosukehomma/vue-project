@@ -1,6 +1,8 @@
-# vue-project
+# kosuke homma
 
-> A Vue.js project
+> kosuke homma portfolio site
+
+2020年に制作した。自身のポートフォリオサイトになります。
 
 ## Build Setup
 

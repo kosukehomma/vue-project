@@ -41,10 +41,10 @@ export default {
         {
           title: 'My Portfolio site',
           thumb: require('@/assets/img/output-thumb.jpg'),
-          caption: 'このサイトです。vue-cliで制作しました。',
-          detail: 'このサイトです。もう少しデザインを洗練させたいです。色々とアニメーションも付けたい。vue-cliで制作しました',
+          caption: '今、ご覧になられているこのサイトです。vue-cliで制作しました。',
+          detail: 'このサイトです。vue-cliでシングルページであるようになるべくスクロールさせず、スライドショーみたいな感じを意識して制作しました。',
           lang: SkillSet01,
-          url: 'https://xxxxx.xxxx/'
+          url: 'https://kou1234ske.netlify.app'
         },
         {
           title: 'My first blog',
@@ -197,9 +197,17 @@ export default {
 
 /* --for tablet-ather -- */
 @media screen and (max-width: 559px){
-  .output-area {
-    padding: 0 .75rem;
-    width: 94%;
+  .output {
+    padding-top: 0;
+    &-area {
+      padding: 0 .75rem;
+      width: 94%;
+    }
+  }
+  .content {
+    &-detail {
+      font-size: .7rem;
+    }
   }
 }
 </style>
