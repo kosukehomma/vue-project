@@ -86,8 +86,8 @@
           </validation-observer>
         </template>
         <template v-else>
-          <p v-text="'お問い合わせ頂きありがとうございました。'" />
-          <p><router-link to="/" v-text="'TOPへ'" /></p>
+          <p class="finished" v-text="'お問い合わせ頂きありがとうございました。'" />
+          <p class="finished"><router-link to="/contact" v-text="'OK'" /></p>
         </template>
       </section>
     </div>
@@ -232,7 +232,11 @@ export default {
     opacity: .3;
   }
 }
-
+.finished {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
 /* --for tablet-- */
 @media screen and (max-width: 959px){
 
@@ -252,6 +256,9 @@ export default {
     max-width: 400px;
     width: 80%;
     padding: 1rem 1.25rem;
+  }
+  .finished {
+    font-size: .85rem;
   }
 }
 </style>
