@@ -3,7 +3,7 @@
     <div class="contact-area">
       <h1 class="area-title">{{ title }}</h1>
       <section class="contact-form">
-        <validation-observer ref="observer" v-slot="{ invalid, validated }" tag="form" class="contact-form-wrapper" name="contact" method="POST" netlify>
+        <validation-observer ref="observer" v-slot="{ invalid, validated }" tag="form" class="contact-form-wrapper" name="contact" method="POST" data-netlify="true" netlify>
 
           <input type="hidden" name="form-name" value="contact" />
           <div class="form-content">
