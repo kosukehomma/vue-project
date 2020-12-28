@@ -233,9 +233,12 @@ export default {
   }
 }
 .finished {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   font-weight: bold;
   text-align: center;
+  a {
+    font-size: 2.5rem !important;
+  }
 }
 /* --for tablet-- */
 @media screen and (max-width: 959px){

@@ -19,7 +19,8 @@ img {
 }
 
 a {
-  &:link {
+  &:link,
+  &:visited {
     color: #444444;
     text-decoration: none;
   }
