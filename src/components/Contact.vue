@@ -88,7 +88,6 @@
         <template v-else>
           <p class="finished" v-text="'お問い合わせありがとうございました。'" />
           <!-- <p class="finished"><router-link to="/" v-text="'OK'" /></p> -->
-          <button type="submit" class="send_btn" v-text="'OK'" />
         </template>
       </section>
     </div>
@@ -198,7 +197,7 @@ export default {
     span {
       color: #c03838;
     }
-    .finished {
+    &.finished {
       font-size: 1rem;
       font-weight: bold;
       text-align: center;
