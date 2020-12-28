@@ -8,8 +8,6 @@
         name="contact"
         method="POST"
         v-model="formValues"
-        action=""
-        data-netlify="true"
         >
 
           <input type="hidden" name="form-name" value="contact" />
