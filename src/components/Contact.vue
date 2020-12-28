@@ -10,6 +10,7 @@
         class="contact-form-wrapper"
         name="contact"
         method="POST"
+        action="/"
         data-netlify="true"
         netlify
         >
