@@ -262,9 +262,8 @@ export default {
 
       p {
         &.finished {
-          font-size: 1rem;
-          font-weight: 700;
-          text-align: center;
+          font-size: .8rem;
+          font-weight: 600;
         }
       }
     }
