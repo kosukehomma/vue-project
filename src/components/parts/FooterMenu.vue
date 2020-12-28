@@ -9,7 +9,7 @@ export default {
   name: 'Footer',
   data () {
     return {
-      footer: ' &copy; 2020 Kosuke Homma'
+      footer: ' &copy; 2020-present Kosuke Homma'
     }
   }
 }
@@ -24,6 +24,7 @@ footer {
   left: 0%;
   bottom: 0;
   z-index: 15;
+  font-size: .8rem;
 }
 footer > p {
   margin: 0.5rem;
@@ -33,7 +34,7 @@ footer > p {
 @media screen and (max-width: 959px){
   footer {
     width: 160px;
-    font-size: .8rem;
+    font-size: .7rem;
   }
 }
 

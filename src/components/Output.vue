@@ -42,7 +42,8 @@ export default {
           title: 'My Portfolio site',
           thumb: require('@/assets/img/output-thumb.jpg'),
           caption: '今、ご覧になられているこのサイトです。vue-cliで制作しました。',
-          detail: 'このサイトです。vue-cliでシングルページであるようになるべくスクロールさせず、スライドショーみたいな感じを意識して制作しました。',
+          detail: `このサイトです。vue-cliでシングルページであるようになるべくスクロールさせず、スライドショーみたいな感じを意識して制作しました。
+コンタクトフォームのバリデーションにはvee-validateを使用しています。`,
           lang: SkillSet01,
           url: 'https://kou1234ske.netlify.app'
         },

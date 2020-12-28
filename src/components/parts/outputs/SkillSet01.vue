@@ -9,6 +9,7 @@
     <NodejsIcon />
     <NpmIcon />
     <GitIcon />
+    <NetlifyIcon />
   </div>
 </template>
 
@@ -37,6 +38,7 @@ import NuxtIcon from '@/components/parts/skills/NuxtIcon'
 import SlackIcon from '@/components/parts/skills/SlackIcon'
 import PhpIcon from '@/components/parts/skills/PhpIcon'
 import YarnIcon from '@/components/parts/skills/YarnIcon'
+import NetlifyIcon from '@/components/parts/skills/NetlifyIcon'
 
 export default {
   name: 'Output',
@@ -64,7 +66,8 @@ export default {
     NuxtIcon,
     SlackIcon,
     PhpIcon,
-    YarnIcon
+    YarnIcon,
+    NetlifyIcon
   }
 }
 </script>
