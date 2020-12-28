@@ -86,8 +86,9 @@
           </validation-observer>
         </template>
         <template v-else>
-          <p class="finished" v-text="'お問い合わせ頂きありがとうございました。'" />
-          <p class="finished"><router-link to="/contact" v-text="'OK'" /></p>
+          <p class="finished" v-text="'お問い合わせありがとうございました。'" />
+          <!-- <p class="finished"><router-link to="/" v-text="'OK'" /></p> -->
+          <button type="submit" class="send_btn" v-text="'OK'" />
         </template>
       </section>
     </div>
@@ -197,6 +198,14 @@ export default {
     span {
       color: #c03838;
     }
+    .finished {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      a {
+        font-size: 1.25rem;
+      }
+    }
   }
 }
 .form-content {
@@ -232,14 +241,7 @@ export default {
     opacity: .3;
   }
 }
-.finished {
-  font-size: 1.5rem !important;
-  font-weight: bold;
-  text-align: center;
-  a {
-    font-size: 2.5rem !important;
-  }
-}
+
 /* --for tablet-- */
 @media screen and (max-width: 959px){
 
