@@ -255,14 +255,20 @@ export default {
   .contact {
     padding-top: 0;
     text-align: left;
+    &-form {
+      max-width: 400px;
+      width: 80%;
+      padding: 1rem 1.25rem;
+
+      p {
+        &.finished {
+          font-size: 1rem;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+    }
   }
-  .contact-form {
-    max-width: 400px;
-    width: 80%;
-    padding: 1rem 1.25rem;
-  }
-  .finished {
-    font-size: .85rem;
-  }
+
 }
 </style>
