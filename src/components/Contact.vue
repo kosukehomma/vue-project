@@ -14,7 +14,6 @@
         netlify
         >
 
-          <input type="hidden" name="form-name" value="contact" />
           <div class="form-content">
             <label for="name" class="req">YOUR NAME</label><br>
             <validation-provider
