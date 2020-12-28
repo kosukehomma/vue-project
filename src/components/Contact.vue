@@ -3,103 +3,136 @@
     <div class="contact-area">
       <h1 class="area-title">{{ title }}</h1>
       <section class="contact-form">
-        <validation-observer
-        ref="observer"
-        v-slot="{ invalid, validated }"
-        tag="form"
-        class="contact-form-wrapper"
-        name="contact"
-        method="POST"
-        action="/"
-        data-netlify="true"
-        netlify
-        >
+        <template v-if="!finished">
+          <validation-observer
+          ref="observer"
+          v-slot="{ invalid, validated }"
+          tag="form"
+          class="contact-form-wrapper"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          @submit.prevent
+          >
 
-          <div class="form-content">
-            <label for="name" class="req">YOUR NAME</label><br>
-            <validation-provider
-            v-slot="{ errors }"
-            rules="required|max:20"
-            name="お名前"
-            >
-              <input
-              type="text"
-              name="name"
-              v-model="name"
-              placeholder="your name"
-              autocomplete="name"
+            <div class="form-content">
+              <label for="name" class="req">YOUR NAME</label><br>
+              <validation-provider
+              v-slot="{ errors }"
+              rules="required|max:20"
+              name="お名前"
               >
-              <span class="v-message" v-show="errors.length">
-                {{ errors[0] }}
-              </span>
-            </validation-provider>
-          </div>
-          <div class="form-content">
-            <label for="email" class="req">YOUR EMAIL</label><br>
-            <validation-provider
-            v-slot="{ errors }"
-            rules="required|email|max:60"
-            name="メールアドレス"
-            >
-              <input
-              type="email"
-              placeholder="Email address"
-              v-model="email"
-              name="email"
-              autocomplete="email"
+                <input
+                type="text"
+                name="name"
+                v-model="form.name"
+                placeholder="your name"
+                autocomplete="name"
+                >
+                <span class="v-message" v-show="errors.length">
+                  {{ errors[0] }}
+                </span>
+              </validation-provider>
+            </div>
+            <div class="form-content">
+              <label for="email" class="req">YOUR EMAIL</label><br>
+              <validation-provider
+              v-slot="{ errors }"
+              rules="required|email|max:60"
+              name="メールアドレス"
               >
-              <span class="v-message" v-show="errors.length">
-                {{ errors[0] }}
-              </span>
-            </validation-provider>
-          </div>
-          <div class="form-content">
-            <label>COMPANY</label><br>
-            <input type="text" name="conpany" v-model="company" placeholder="your company">
-          </div>
-          <div class="form-content">
-            <label for="message" class="req">MESSAGE</label><br>
-            <validation-provider
-            v-slot="{ errors }"
-            rules="required|max:1000"
-            name="メッセージ"
-            >
-              <textarea
-              name="message"
-              v-model="message"
-              placeholder="何かメッセージや聞きたい事がございましたらこちらに入力してください。"
+                <input
+                type="email"
+                placeholder="Email address"
+                v-model="form.email"
+                name="email"
+                autocomplete="email"
+                >
+                <span class="v-message" v-show="errors.length">
+                  {{ errors[0] }}
+                </span>
+              </validation-provider>
+            </div>
+            <div class="form-content">
+              <label>COMPANY</label><br>
+              <input type="text" name="conpany" v-model="form.company" placeholder="your company">
+            </div>
+            <div class="form-content">
+              <label for="message" class="req">MESSAGE</label><br>
+              <validation-provider
+              v-slot="{ errors }"
+              rules="required|max:1000"
+              name="メッセージ"
               >
-              </textarea>
-              <span class="v-message" v-show="errors.length">
-                {{ errors[0] }}
-              </span>
-            </validation-provider>
-          </div>
-          <div class="form-content btn_area">
-            <button
-            type="submit"
-            id="send"
-            class="send_btn"
-            :disabled="invalid || !validated"
-            >SEND</button>
-          </div>
-        </validation-observer>
+                <textarea
+                name="message"
+                v-model="form.message"
+                placeholder="何かメッセージや聞きたい事がございましたらこちらに入力してください。"
+                >
+                </textarea>
+                <span class="v-message" v-show="errors.length">
+                  {{ errors[0] }}
+                </span>
+              </validation-provider>
+            </div>
+            <div class="form-content btn_area">
+              <button
+              @click="handleSubmit"
+              class="send_btn"
+              :disabled="invalid || !validated"
+              v-text="'SEND'"
+              />
+            </div>
+          </validation-observer>
+        </template>
+        <template v-else>
+          <p v-text="'お問い合わせ頂きありがとうございました。'" />
+          <p><router-link to="/" v-text="'TOPへ'" /></p>
+        </template>
       </section>
     </div>
   </div>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   data () {
     return {
       title: 'CONTACT',
-      formValues: {},
-      name: '',
-      email: '',
-      company: '',
-      message: ''
+      form: {
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      },
+      finished: false
+    }
+  },
+  methods: {
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    handleSubmit () {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios
+        .post(
+          '/',
+          this.encode({
+            'form-name': 'contact',
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.finished = true
+        })
     }
   }
 }
