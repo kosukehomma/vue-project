@@ -48,46 +48,45 @@ export default {
           url: 'https://kou1234ske.netlify.app'
         },
         {
-          title: 'My first blog',
+          title: 'My blog',
           thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: 'ブログサイトになります。思った事を書いていこうかと、',
-          detail: `ブログサイトになります。技術的な事とか、好きな事とか、日々思った事を書いていこうかと思います。Nuxt.jsで作れるといいな。
-そうしていこうかと現在情報収集中`,
+          caption: 'ブログ（制作中）',
+          detail: `ブログサイトになります。現在情報収集中`,
           lang: SkillSet02,
           url: 'https://xxxxx.xxxx/'
         },
         {
-          title: '作品No.3',
+          title: 'No.3',
           thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: 'ちょっとしたwebアプリ',
-          detail: 'LaravelとVueでちょっとしたwebアプリ作ってみました。',
+          caption: 'dummy',
+          detail: 'dummydummydummydummydummy',
           lang: 'CssIcon',
           url: 'https://xxxxx.xxxx/'
-        },
-        {
-          title: '作品No.4',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: '架空の会社のHPです。',
-          detail: '普通のwebサイトです。実際には存在しない架空の会社のHPです。',
-          lang: 'VueIcon',
-          url: 'https://xxxxx.xxxx/'
-        },
-        {
-          title: '作品No.5',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: '架空の蕎麦屋のHPです。',
-          detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
-          lang: 'JavascriptIcon',
-          url: 'https://xxxxx.xxxx/'
-        },
-        {
-          title: '作品No.6',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: '架空の唐揚げ専門店のHPです。',
-          detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
-          lang: 'SassIcon',
-          url: 'https://xxxxx.xxxx/'
         }
+        // {
+        //   title: '作品No.4',
+        //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
+        //   caption: '架空の会社のHPです。',
+        //   detail: '普通のwebサイトです。実際には存在しない架空の会社のHPです。',
+        //   lang: 'VueIcon',
+        //   url: 'https://xxxxx.xxxx/'
+        // },
+        // {
+        //   title: '作品No.5',
+        //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
+        //   caption: '架空の蕎麦屋のHPです。',
+        //   detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
+        //   lang: 'JavascriptIcon',
+        //   url: 'https://xxxxx.xxxx/'
+        // },
+        // {
+        //   title: '作品No.6',
+        //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
+        //   caption: '架空の唐揚げ専門店のHPです。',
+        //   detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
+        //   lang: 'SassIcon',
+        //   url: 'https://xxxxx.xxxx/'
+        // }
       ]
     }
   },
