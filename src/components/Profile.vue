@@ -37,13 +37,13 @@ export default {
       careerItems: [
         {
           job: `Markup Engineer`,
-          period: `2020/7 ~ Present`,
+          period: `2020/11 ~ Present`,
           title: `金融情報サイトの更新・修正`,
           detail: `大手金融系グループ企業での金融情報サイトの日々の為替情報や仮想通貨情報、LPのWEBデザイン／コーディング業務ほかバナー制作など`
         },
         {
           job: `Markup / FrontEnd Engineer`,
-          period: `2018/11 ~ 2020/3`,
+          period: `2018/11 ~ 2020/4`,
           title: `会員向けサイト運用、銀行サイトのリニューアル`,
           detail: `某通信会社の会員向けサイトの修正、更新業務を半年。その後、某銀行サイトのリニューアルプロジェクトへアサインし、新規ページ追加、ソースチェック業務。`
         },
