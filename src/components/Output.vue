@@ -24,13 +24,15 @@
 import Modal from '@/components/parts/outputs/Modal'
 import SkillSet01 from '@/components/parts/outputs/SkillSet01'
 import SkillSet02 from '@/components/parts/outputs/SkillSet02'
+import SkillSet03 from '@/components/parts/outputs/SkillSet03'
 
 export default {
   name: 'Output',
   components: {
     Modal,
     SkillSet01,
-    SkillSet02
+    SkillSet02,
+    SkillSet03
   },
   data () {
     return {
@@ -47,30 +49,30 @@ export default {
           lang: SkillSet01,
           url: 'https://kou1234ske.netlify.app'
         },
-        {
-          title: 'My blog',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: 'ブログ（制作中）',
-          detail: `ブログサイトになります。現在情報収集中`,
-          lang: SkillSet02,
-          url: 'https://xxxxx.xxxx/'
-        },
-        {
-          title: 'No.3',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: 'dummy',
-          detail: 'dummydummydummydummydummy',
-          lang: 'CssIcon',
-          url: 'https://xxxxx.xxxx/'
-        }
         // {
-        //   title: '作品No.4',
+        //   title: 'My blog',
         //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-        //   caption: '架空の会社のHPです。',
-        //   detail: '普通のwebサイトです。実際には存在しない架空の会社のHPです。',
-        //   lang: 'VueIcon',
+        //   caption: 'ブログ（制作中）',
+        //   detail: `ブログサイトになります。現在情報収集中`,
+        //   lang: SkillSet02,
         //   url: 'https://xxxxx.xxxx/'
         // },
+        {
+          title: 'TAKUMI GARDEN',
+          thumb: require('@/assets/img/output-thumb_01.jpg'),
+          caption: '関西拠点の造園デザイナーのサイト、Wordpress使用',
+          detail: '関西のエクステリア・外構・ガーデンの設計・施工、工事を行なっている外構・造園デザイナーのサイト、コーディング部分をメインに担当する。施工事例は外部サイトへリンクします。',
+          lang: SkillSet02,
+          url: 'https://www.takumi-garden.jp/'
+        },
+        {
+          title: '蕎麦処多賀',
+          thumb: require('@/assets/img/output-thumb_02.jpg'),
+          caption: 'お蕎麦屋さんのサイト、Wordpress使用',
+          detail: '熱海にある雄大さを感じるお蕎麦屋さんのwebサイトです。Wordpressにて制作、コーディング部分をメインに担当。本来、1ヵ月分しか表示されないカレンダーパーツを2ヵ月分表示されるようにカスタムしました。',
+          lang: SkillSet03,
+          url: 'https://www.tagasoba.jp/'
+        }
         // {
         //   title: '作品No.5',
         //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),

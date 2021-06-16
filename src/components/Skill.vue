@@ -6,26 +6,30 @@
       <div class="skill-icons">
         <HtmlIcon />
         <CssIcon />
-        <JavascriptIcon />
-        <JqueryIcon />
-        <IllustratorIcon />
-        <PhotoshopIcon />
         <SassIcon />
+        <JavascriptIcon />
+        <TypescriptIcon />
+        <ReactIcon />
+        <NextIcon />
         <VueIcon /><br>
+        <NuxtIcon />
+        <JqueryIcon />
+        <GulpIcon />
+        <WebpackIcon />
         <NodejsIcon />
         <NpmIcon />
         <LaravelIcon />
         <WordpressIcon />
         <!-- <VscodeIcon /> -->
-        <!-- <BitbucketIcon /> -->
         <!-- <DockerIcon /> -->
-        <!-- <GitlabIcon /> -->
         <GitIcon />
-        <GulpIcon />
-        <WebpackIcon />
+        <GitlabIcon />
+        <BitbucketIcon />
         <VagrantIcon />
-        <!-- <NuxtIcon /> -->
-        <!-- <SlackIcon /> -->
+        <IllustratorIcon />
+        <PhotoshopIcon />
+
+        <SlackIcon />
         <!-- <PhpIcon /> -->
         <!-- <YarnIcon /> -->
       </div>
