@@ -67,7 +67,7 @@
                 <textarea
                 name="message"
                 v-model="form.message"
-                placeholder="何かメッセージや聞きたい事がございましたらこちらに入力してください。"
+                placeholder="何かメッセージがございましたらこちらに入力してください。"
                 >
                 </textarea>
                 <span class="v-message" v-show="errors.length">
