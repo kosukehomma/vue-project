@@ -57,38 +57,38 @@ export default {
         //   lang: SkillSet02,
         //   url: 'https://xxxxx.xxxx/'
         // },
-        // {
-        //   title: 'TAKUMI GARDEN',
-        //   thumb: require('@/assets/img/output-thumb_01.jpg'),
-        //   caption: '関西拠点の造園デザイナーのサイト、Wordpress使用',
-        //   detail: '関西のエクステリア・外構・ガーデンの設計・施工、工事を行なっている外構・造園デザイナーのサイト、コーディング部分をメインに担当する。施工事例は外部サイトへリンクします。',
-        //   lang: SkillSet02,
-        //   url: 'https://www.takumi-garden.jp/'
-        // },
-        // {
-        //   title: '蕎麦処多賀',
-        //   thumb: require('@/assets/img/output-thumb_02.jpg'),
-        //   caption: 'お蕎麦屋さんのサイト、Wordpress使用',
-        //   detail: '熱海にある雄大さを感じるお蕎麦屋さんのwebサイトです。Wordpressにて制作、コーディング部分をメインに担当。本来、1ヵ月分しか表示されないカレンダーパーツを2ヵ月分表示されるようにカスタムしました。',
-        //   lang: SkillSet03,
-        //   url: 'https://www.tagasoba.jp/'
-        // }
         {
-          title: '作品No.5',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: '架空の蕎麦屋のHPです。',
-          detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
-          lang: 'JavascriptIcon',
-          url: 'https://xxxxx.xxxx/'
+          title: 'TAKUMI GARDEN',
+          thumb: require('@/assets/img/output-thumb_01.jpg'),
+          caption: '関西拠点の造園デザイナーのサイト、Wordpress使用',
+          detail: '関西のエクステリア・外構・ガーデンの設計・施工、工事を行なっている外構・造園デザイナーのサイト、コーディング部分をメインに担当する。施工事例は外部サイトへリンクします。',
+          lang: SkillSet02,
+          url: 'https://www.takumi-garden.jp/'
         },
         {
-          title: '作品No.6',
-          thumb: require('@/assets/img/output-thumb_dummy.jpg'),
-          caption: '架空の唐揚げ専門店のHPです。',
-          detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
-          lang: 'SassIcon',
-          url: 'https://xxxxx.xxxx/'
+          title: '蕎麦処多賀',
+          thumb: require('@/assets/img/output-thumb_02.jpg'),
+          caption: 'お蕎麦屋さんのサイト、Wordpress使用',
+          detail: '熱海にある雄大さを感じるお蕎麦屋さんのwebサイトです。Wordpressにて制作、コーディング部分をメインに担当。本来、1ヵ月分しか表示されないカレンダーパーツを2ヵ月分表示されるようにカスタムしました。',
+          lang: SkillSet03,
+          url: 'https://www.tagasoba.jp/'
         }
+        // {
+        //   title: '作品No.5',
+        //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
+        //   caption: '架空の蕎麦屋のHPです。',
+        //   detail: '普通のwebサイトです。実際には存在しない架空の蕎麦屋のHPです。',
+        //   lang: 'JavascriptIcon',
+        //   url: 'https://xxxxx.xxxx/'
+        // },
+        // {
+        //   title: '作品No.6',
+        //   thumb: require('@/assets/img/output-thumb_dummy.jpg'),
+        //   caption: '架空の唐揚げ専門店のHPです。',
+        //   detail: '普通のwebサイトです。実際には存在しない架空の唐揚げ専門店のHPです。',
+        //   lang: 'SassIcon',
+        //   url: 'https://xxxxx.xxxx/'
+        // }
       ]
     }
   },
