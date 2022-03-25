@@ -11,7 +11,7 @@
         <a href="https://www.facebook.com/honma.jams4511" target="_blank">
           <FacebookIcon />
         </a>
-        <a href="https://www.instagram.com/hommashigh/" target="_blank">
+        <a href="https://www.instagram.com/homma_front_end_studio/" target="_blank">
           <InstagramIcon />
         </a>
         <a href="https://www.pinterest.jp/hommer42/_saved/" target="_blank">
