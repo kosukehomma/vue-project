@@ -17,7 +17,7 @@
         <a href="https://www.pinterest.jp/hommer42/_saved/" target="_blank">
           <PinterestIcon />
         </a>
-        <a href="https://github.com/honmakousuke" target="_blank">
+        <a href="https://github.com/kosukehomma" target="_blank">
           <GithubIcon />
         </a>
       </div>
