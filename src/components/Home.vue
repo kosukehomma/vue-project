@@ -14,9 +14,6 @@
         <a href="https://www.instagram.com/homma_front_end_studio/" target="_blank">
           <InstagramIcon />
         </a>
-        <a href="https://www.pinterest.jp/hommer42/_saved/" target="_blank">
-          <PinterestIcon />
-        </a>
         <a href="https://github.com/kosukehomma" target="_blank">
           <GithubIcon />
         </a>

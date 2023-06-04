@@ -37,7 +37,13 @@ export default {
       careerItems: [
         {
           job: `Front-End Engineer`,
-          period: `2022/4 ~ Present`,
+          period: `2022/10 ~ Present`,
+          title: `オンラインゲームプラットフォームで運営するキャンペーン施策のフロントエンド開発`,
+          detail: `季節ごとに行うキャンペーンページのポイントバックやプレゼント企画など施策ごとのコーディング、キャンペーン内にあるルーレットアプリのReact化(UIコーディング)を担当`
+        },
+        {
+          job: `Front-End Engineer`,
+          period: `2022/4 ~ 2022/9`,
           title: `医療機器のフロント開発`,
           detail: `ブラウザで医療画像データを確認できる医療ビューワーの新規画面作成や改修、機能追加、リファクタリングなど`
         },
