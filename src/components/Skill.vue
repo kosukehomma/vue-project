@@ -21,11 +21,11 @@
         <LaravelIcon />
         <WordpressIcon />
         <!-- <VscodeIcon /> -->
-        <!-- <DockerIcon /> -->
+        <DockerIcon />
         <GitIcon />
         <GitlabIcon />
         <BitbucketIcon />
-        <VagrantIcon />
+        <!-- <VagrantIcon /> -->
         <IllustratorIcon />
         <PhotoshopIcon />
 

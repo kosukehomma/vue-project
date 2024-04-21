@@ -37,7 +37,13 @@ export default {
       careerItems: [
         {
           job: `Front-End Engineer`,
-          period: `2022/10 ~ Present`,
+          period: `2023/10 ~ Present`,
+          title: `ふるさと納税に関するサイトのコーディング業務全般`,
+          detail: `ふるさと納税のポータルサイトの運用、またそれに関わるイベントに関するページのフロント開発`
+        },
+        {
+          job: `Markup / Front-End Engineer`,
+          period: `2022/10 ~ 2023/9`,
           title: `オンラインゲームプラットフォームで運営するキャンペーン施策のフロントエンド開発`,
           detail: `季節ごとに行うキャンペーンページのポイントバックやプレゼント企画など施策ごとのコーディング、キャンペーン内にあるルーレットアプリのReact化(UIコーディング)を担当`
         },
